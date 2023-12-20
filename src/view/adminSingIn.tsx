@@ -4,6 +4,7 @@ import Input from "../component/input/input.tsx";
 
 
 
+
 function AdminSingIn(){
 
     return<section className={'bg-gray-200 w-full h-screen'}>
@@ -14,7 +15,7 @@ function AdminSingIn(){
           </div>
             <div className={' w-[42%] h-[85%] absolute right-2 top-[13%]'}>
                 <p className={'font-bold text-[32px] flex items-center justify-center p-7 text-gray-400 relative top-[40px]'}>Sing In</p>
-                <select className={' block border-2 border-black outline-none w-80 h-9 mt-[30px] relative left-[19%]'} id={'owner_type'}>
+                <select className={' block border-2 border-black outline-none w-80 h-9 mt-[30px] relative left-[19%]'} id={'owner_type'} >
                     <option>Admin</option>
                     <option>Branch Owner</option>
                 </select>
@@ -22,8 +23,11 @@ function AdminSingIn(){
                     <option>Panadura</option>
                     <option>Galle</option>
                 </select>
-                <Input  type={'username'} name={'username'} placeholder={'username'}/>
-                <Input type={'password'} name={'password'} placeholder={'password'}/>
+
+                <Input  type={'username'} name={'username'} placeholder={'Enter Your UseName'}/>
+
+
+                <Input type={'password'} name={'password'} placeholder={'Enter Your Password'}/>
                  <button className="min-btn relative left-[37%] hover:bg-green-600 top-[2%]">Sing In</button>
                 <span className={'relative left-[100px] top-[30px]'}>Don You Have An Account ?<p className={'absolute right-[-32%] top-0 text-blue-700'}>Sing Up</p></span>
             </div>
