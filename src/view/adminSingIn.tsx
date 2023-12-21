@@ -15,11 +15,11 @@ function AdminSingIn(){
           </div>
             <div className={' w-[42%] h-[85%] absolute right-2 top-[13%]'}>
                 <p className={'font-bold text-[32px] flex items-center justify-center p-7 text-gray-400 relative top-[40px]'}>Sing In</p>
-                <select className={' block border-2 border-black outline-none w-80 h-9 mt-[30px] relative left-[19%]'} id={'owner_type'} >
+                <select className={' block border-2 border-black outline-none w-80 h-9 mt-[20px] relative left-[19%]'} id={'owner_type'} >
                     <option>Admin</option>
                     <option>Branch Owner</option>
                 </select>
-                <select className={'block border-2 border-black outline-none w-80 h-9 mt-[30px] relative left-[19%]'} id={'branch'}>
+                <select className={'block border-2 border-black outline-none w-80 h-9 mt-[20px] relative left-[19%]'} id={'branch'}>
                     <option>Panadura</option>
                     <option>Galle</option>
                 </select>
