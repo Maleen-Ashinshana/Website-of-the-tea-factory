@@ -1,5 +1,6 @@
 import  logo from '../assets/images/Evergreen_Logo_Primary_Full_4Col.png'
 import Input from "../component/input/input.tsx";
+import {Link} from "react-router-dom";
 
 
 
@@ -14,12 +15,15 @@ function AdminSingIn(){
               <img src={logo} className={'w-full h-full'} title="logo" alt="logo"/>
           </div>
             <div className={' w-[42%] h-[85%] absolute right-2 top-[13%]'}>
-                <p className={'font-bold text-[32px] flex items-center justify-center p-7 text-gray-400 relative top-[40px]'}>Sing In</p>
-                <select className={' block border-2 border-black outline-none w-80 h-9 mt-[20px] relative left-[19%]'} id={'owner_type'} >
+                <p className={'font-bold text-[32px] flex items-center justify-center p-7 text-gray-400 relative top-[20px]'}>Sing In</p>
+
+                <select className={'  outline-none w-80 h-9 mt-[30px] relative left-[19%] bg-gray-200 rounded-[7px]'} id={'owner_type'} >
+                    <option selected>Select Type</option>
                     <option>Admin</option>
                     <option>Branch Owner</option>
                 </select>
-                <select className={'block border-2 border-black outline-none w-80 h-9 mt-[20px] relative left-[19%]'} id={'branch'}>
+                <select className={' outline-none w-80 h-9 mt-[30px] relative left-[19%] bg-gray-200 rounded-[7px]'} id={'branch'} >
+                    <option selected>Select The Branch</option>
                     <option>Panadura</option>
                     <option>Galle</option>
                 </select>
@@ -29,7 +33,11 @@ function AdminSingIn(){
 
                 <Input type={'password'} name={'password'} placeholder={''} label={'password'}/>
                  <button className="min-btn relative left-[37%] hover:bg-green-600 top-[2%]">Sing In</button>
-                <span className={'relative left-[100px] top-[30px]'}>Don You Have An Account ?<p className={'absolute right-[-32%] top-0 text-blue-700'}>Sing Up</p></span>
+                <span className={'relative left-[100px] top-[30px]'}>Don You Have An Account ?
+<Link to={"/singup"}>
+<span className={'absolute right-[-32%] top-0 text-blue-700'}>Sing Up</span>
+</Link>
+                    </span>
             </div>
         </div>
     </section>
