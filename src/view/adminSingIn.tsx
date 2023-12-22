@@ -34,7 +34,7 @@ function AdminSingIn() {
                 <Input type={'password'} name={'password'} placeholder={''} label={'password'}/>
                 <button className="min-btn relative left-[37%]  top-[2%]">Sing In</button>
                 <span className={'relative left-[100px] top-[30px]'}>Don You Have An Account ?
-                    <Link to={"/singup"}>
+                    <Link to={"/adminSingUp"}>
                             <span className={'absolute right-[-32%] top-0 text-blue-700'}>Sing Up</span>
                     </Link>
                 </span>
