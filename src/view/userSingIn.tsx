@@ -18,8 +18,11 @@ function UserSingIn() {
                     In</p>
                 <div className={'w-full h-[40%] relative top-[20%]'}>
                     <Input type={'username'} name={'username'} placeholder={''} label={'username'}/>
-                    <Input type={'password'} name={'password'} placeholder={''} label={'password'}/>
-                    <button className={'min-btn left-[35%]'}>Sing In</button>
+                    <Input type={'password'} name={'register number'} placeholder={''} label={'register number'}/>
+                    <Link to={"/user-tea-leaves"}>
+                        <button className={'min-btn left-[35%]'}>Sing In</button>
+                    </Link>
+
                 </div>
                <span className={'absolute bottom-[15%] left-[15%]'}>Don You Have An Account?
                    <Link to={"/userSingUp"}>
