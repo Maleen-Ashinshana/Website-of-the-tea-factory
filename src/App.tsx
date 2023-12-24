@@ -6,6 +6,7 @@ import AdminSingUp from "./view/adminSingUp.tsx";
 import UserSingIn from "./view/userSingIn.tsx";
 import UserSingUp from "./view/userSingUp.tsx";
 import UserTeaLeaves from "./view/userTeaLeaves.tsx";
+
 ;
 function App() {
 
@@ -14,9 +15,7 @@ function App() {
     <>
 <div>
     <BrowserRouter>
-
         <Routes>
-
             <Route path={"/"} element={<AdminSingIn/>}></Route>
             <Route path={"/admin-sing-up"} element={<AdminSingUp/>}></Route>
             <Route path={"/user-sing-in"} element={<UserSingIn/>}></Route>
