@@ -25,7 +25,7 @@ function UserSingIn() {
                     </Link>
 
                 </div>
-               <span className={'absolute bottom-[15%] left-[15%]'}>Don You Have An Account?
+                <span className={'absolute bottom-[15%] left-[15%]'}>Don You Have An Account?
                    <Link to={"/userSingUp"}>
                        <span className={'text-blue-700 relative left-[10px]'}>Sing Up</span>
                    </Link>
@@ -33,6 +33,7 @@ function UserSingIn() {
                </span>
             </div>
         </div>
+
     </section>
 }
 

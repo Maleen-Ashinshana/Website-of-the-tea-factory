@@ -6,7 +6,8 @@ import AdminSingUp from "./view/adminSingUp.tsx";
 import UserSingIn from "./view/userSingIn.tsx";
 import UserSingUp from "./view/userSingUp.tsx";
 import UserTeaLeaves from "./view/userTeaLeaves.tsx";
-import Tea from "./view/tea.tsx";
+import OrderingTeaPowder from "./view/orderingTeaPowder.tsx";
+
 
 ;
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route path={"/user-sing-in"} element={<UserSingIn/>}></Route>
             <Route path={"/user-sing-up"} element={<UserSingUp/>}></Route>
             <Route path={"/user-tea-leaves"} element={<UserTeaLeaves/>}></Route>
+            <Route path={"/user-tea-powder"} element={<OrderingTeaPowder/>}></Route>
 
 
         </Routes>
