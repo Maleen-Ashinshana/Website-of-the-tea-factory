@@ -1,7 +1,74 @@
  import logo from "../assets/images/Evergreen_Logo_Primary_Full_4Col.png"
 import logOut from "../assets/images/download (7).png";
 import addPng from "../assets/images/download__10_-removebg-preview.png";
- function UserTeaLeaves(){
+interface Data{
+    id:number,
+    date:string
+    tea_type:string,
+    qty:number,
+    price:number
+}
+const data:Data[]=[
+    {
+        id:1,
+         date:"2023-1-2",
+         tea_type:"super",
+         qty:25,
+         price:1300
+    },
+    {
+        id:2,
+        date:"2023-1-5",
+        tea_type:"normal",
+        qty:15,
+        price:900
+    },
+    {
+        id:3,
+        date:"2023-2-2",
+        tea_type:"super",
+        qty:38,
+        price:1500
+    },
+    {
+        id:4,
+        date:"2023-3-2",
+        tea_type:"super",
+        qty:18,
+        price:500
+    },
+    {
+        id:5,
+        date:"2023-2-2",
+        tea_type:"super",
+        qty:38,
+        price:1500
+    },
+    {
+        id:6,
+        date:"2023-2-2",
+        tea_type:"super",
+        qty:38,
+        price:1500
+    },
+    {
+        id:3,
+        date:"2023-2-2",
+        tea_type:"super",
+        qty:38,
+        price:1500
+    }
+]
+// const  data:Data[]={
+//  {
+//      id:1,
+//          date,"2023-1-2",
+//          tea_type:"super",
+//          qty:25,
+//          price:1300
+//  }
+// }
+function UserTeaLeaves(){
     return<section className={'bg-white w-full h-screen'}>
         <header>
             <nav className={' flex justify-between items-center bg-gray-400 w-full h-12 font-bold'}>
@@ -17,7 +84,7 @@ import addPng from "../assets/images/download__10_-removebg-preview.png";
             </nav>
         </header>
 
-        <div className={'w-full h-[93.5%] border-2 border-gray-600 '}>
+        <div className={'w-full h-[93.5%] border-2 border-gray-600 bg-[#ffffff]'}>
             <div className={' w-[30%] h-[15%] '}>
                 <p className={'relative m-[10px]'}>UserName :
                     <label className={'font-bold '}>Maleen</label>
@@ -38,8 +105,35 @@ import addPng from "../assets/images/download__10_-removebg-preview.png";
                 <button className={'w-full h-[35%] bg-green-600 rounded-[10px]'}>   Tea Powder</button>
                 <img src={addPng} className={'w-[25px] h-[25px] relative bottom-[38px]'} />
             </div>
-            <h1 className={'relative left-[200px] top-[50px] font-bold text-[30px]'}>Tea Leaves</h1>
+            <h1 className={'relative left-[200px] top-[50px] font-bold text-[30px] w-[50%]'}>Tea Leaves</h1>
 
+            <div className={'w-[70%] h-[60%]  absolute left-0 right-0 top-[250px] bottom-0 m-auto'}>
+              <table>
+                  <thead className={'bg-[#dcdcdc]'}>
+                  <tr>
+                      <th className={'py-3'}>Date</th>
+                      <th className={'py-3'}>Tea Leaves Type</th>
+                      <th className={'py-3'}>Qty</th>
+                      <th className={'py-3'}>Price</th>
+                  </tr>
+
+                  </thead>
+                  <tbody>
+                  {
+                      data.map((r:Data,index:number)=>{
+                          return<tr className={'border-b  '}>
+                              <td className={'w-[10%] relative left-[100px]'}>{r.date}</td>
+                              <td className={'w-[10%] relative left-[100px]'}>{r.tea_type}</td>
+                              <td className={'w-[10%] relative left-[100px]'}>{r.qty}</td>
+                              <td className={'w-[10%] relative left-[100px]'}>{r.price}</td>
+                          </tr>
+                      })
+
+                  }
+
+                  </tbody>
+              </table>
+            </div>
 
         </div>
     </section>
