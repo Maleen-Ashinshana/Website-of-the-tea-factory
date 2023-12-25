@@ -5,6 +5,15 @@ import {Link} from "react-router-dom";
 import logOut from "../assets/images/images-removebg-preview.png";
 import SearchBar from "../component/input/searchBar.tsx";
 import searchIcon from "../assets/images/magnifying-glass.png";
+import Card from "../component/card/card.tsx";
+import TSP from "../assets/images/TSP.png";
+import SOP from "../assets/images/SOP.png";
+import STUM from "../assets/images/STUM-400.png";
+import SOA from "../assets/images/Sulphate-of-Ammonia.png";
+import T65 from "../assets/images/T-65.png";
+import T200 from "../assets/images/T-200.png";
+import T750 from "../assets/images/T-750.png";
+import TU from "../assets/images/TU-709.png";
 
 function Fertilizer(){
     return <section className={'bg-gray-200 w-full h-screen'}>
@@ -35,7 +44,21 @@ function Fertilizer(){
                  </div>
 
              </div>
+             {/*<svg className="animate-bounce w-6 h-6 ...">*/}
+             
+             {/*</svg>*/}
+             
          </div>
+        <div className={'  bg-gray-200'}>
+            <Card title={'Triple Super Phosphate – TSP'} price={'Rs.1500'} imgsrc={TSP}/>
+            <Card title={'SOP'} price={'Rs.1800'} imgsrc={SOP}/>
+            <Card title={'Sulphate-of-Ammonia'} price={'Rs.1900'} imgsrc={SOA}/>
+            <Card title={'STUM-400'} price={'Rs.2000'} imgsrc={STUM}/>
+            <Card title={'T 65'} price={'Rs.2100'} imgsrc={T65}/>
+            <Card title={'T 750'} price={'Rs.1800'} imgsrc={T750}/>
+            <Card title={'TU  709'} price={'Rs.1800'} imgsrc={TU}/>
+            <Card title={'T 200'} price={'Rs.1800'} imgsrc={T200}/>
+        </div>
     </section>
 
 }
