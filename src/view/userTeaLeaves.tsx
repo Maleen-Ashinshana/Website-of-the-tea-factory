@@ -118,8 +118,11 @@ function UserTeaLeaves() {
             <img src={searchIcon} className={'w-[30px] absolute right-[55px] top-[70px]'}/>
 
             <div className={' w-40 h-36 absolute right-[50px] top-[150px] font-bold text-[20px] text-white '}>
-                <button className={'w-full h-[35%] bg-red-600 rounded-[10px]'}>Fertilize</button>
-                <img src={addPng} className={'w-[25px] h-[25px] relative bottom-[38px]'}/>
+                <Link to={"/fertilize"}>
+                    <button className={'w-full h-[35%] bg-red-600 rounded-[10px]'}>Fertilize</button>
+                    <img src={addPng} className={'w-[25px] h-[25px] relative bottom-[38px]'}/>
+                </Link>
+
                 <button className={'w-full h-[35%] bg-green-600 rounded-[10px]'}> Tea Powder</button>
                 <img src={addPng} className={'w-[25px] h-[25px] relative bottom-[38px]'}/>
             </div>

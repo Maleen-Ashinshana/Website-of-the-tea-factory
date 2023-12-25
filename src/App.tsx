@@ -9,6 +9,8 @@ import UserTeaLeaves from "./view/userTeaLeaves.tsx";
 import OrderingTeaPowder from "./view/orderingTeaPowder.tsx";
 import OrderingTeaFertilizer from "./view/orderingTeaFertilizer.tsx";
 
+import Fertilizer from "./view/fertilizer.tsx";
+
 
 ;
 function App() {
@@ -26,15 +28,14 @@ function App() {
             <Route path={"/user-tea-leaves"} element={<UserTeaLeaves/>}></Route>
             <Route path={"/user-tea-powder"} element={<OrderingTeaPowder/>}></Route>
             <Route path={"/user-tea-fertilize"} element={<OrderingTeaFertilizer/>}></Route>
-
+            {/*<Route path={"/fertilize"} element={<Fertilize/>}></Route>*/}
+            <Route path={"/fertilizer"} element={<Fertilizer/>}></Route>
 
         </Routes>
     </BrowserRouter>
 </div>
     </>
   )
-
 }
-
 
 export default App
