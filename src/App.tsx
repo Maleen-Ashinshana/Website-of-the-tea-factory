@@ -10,6 +10,7 @@ import OrderingTeaPowder from "./view/orderingTeaPowder.tsx";
 import OrderingTeaFertilizer from "./view/orderingTeaFertilizer.tsx";
 
 import Fertilizer from "./view/fertilizer.tsx";
+import TeaOrder from "./view/teaOrder.tsx";
 
 
 ;
@@ -30,6 +31,7 @@ function App() {
             <Route path={"/user-tea-fertilize"} element={<OrderingTeaFertilizer/>}></Route>
             {/*<Route path={"/fertilize"} element={<Fertilize/>}></Route>*/}
             <Route path={"/fertilizer"} element={<Fertilizer/>}></Route>
+            <Route path={"/tea"} element={<TeaOrder/>}></Route>
 
         </Routes>
     </BrowserRouter>
