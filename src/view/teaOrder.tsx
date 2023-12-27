@@ -2,6 +2,7 @@ import mainImage from "../assets/images/slide1.1.jpg";
 
 import greenTea from "../assets/images/collection1.4.jpg";
 import blackTea from "../assets/images/collection1.1-_1_.jpg";
+import {useEffect, useState} from "react";
 
 
 // import log from "../assets/images/TSP.png";
@@ -21,19 +22,46 @@ function TeaOrder() {
     //     setShowSeparateDiv(true);
     // };
 
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrolled = window.scrollY > 0;
+            setIsScrolled(scrolled);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const navbarStyle = {
+        backgroundColor: isScrolled ? '#a4a2a2' : 'transparent',
+
+    };
 
     return <section className={'w-full h-screen'}>
-        <div className={'w-full h-full '}>
-            <img src={mainImage} className={'w-full h-full'}/>
+
             <nav
-                className={' flex justify-between items-center  w-full h-16 font-bold relative bottom-[100%] text-white '}>
+                className={'flex justify-between items-center w-full h-16 font-bold fixed top-0 left-0 right-0 text-white '}
+                style={navbarStyle}
+            >
                 {/*<img src={logo} className={'w-36 relative '}/>*/}
                 <h1 className={'font-serif text-3xl'}>Evergreen</h1>
-                <ul className={' flex relative right-[10%] text-[20px] gap-[4vw]'}>
+                <ul className={'flex relative right-[10%] text-[20px] gap-[4vw]'}>
                     <li>Home</li>
                     <li>Product</li>
                 </ul>
             </nav>
+
+
+        <div className={'w-full h-full '}>
+            <img src={mainImage} className={'w-full h-full'}/>
+
+
+
             <p className={'absolute top-[30%] left-[45%] text-white text-[20px] font-sans'}>HEALTH BENEFITS OF
                 TEA</p>
             <p className={'absolute top-[33%] left-[43%] text-white text-[65px] font-serif'}>Evergreen</p>
