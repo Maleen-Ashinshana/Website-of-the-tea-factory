@@ -1,8 +1,9 @@
 import mainImage from "../assets/images/slide1.1.jpg";
-
+import logo from '../assets/images/Evergreen_Logo_Primary_Full_4Col.png'
 import greenTea from "../assets/images/collection1.4.jpg";
 import blackTea from "../assets/images/collection1.1-_1_.jpg";
 import {useEffect, useState} from "react";
+import {Link} from "react-router-dom";
 
 
 // import log from "../assets/images/TSP.png";
@@ -38,38 +39,57 @@ function TeaOrder() {
     }, []);
 
     const navbarStyle = {
-        backgroundColor: isScrolled ? '#a4a2a2' : 'transparent',
-
+        backgroundColor: isScrolled ? 'rgba(164, 162, 162, 0.80)' : 'transparent',
+        transition: 'background-color 0.3s ease', // Optional: Add a smooth transition effect
     };
 
     return <section className={'w-full h-screen'}>
 
             <nav
-                className={'flex justify-between items-center w-full h-16 font-bold fixed top-0 left-0 right-0 text-white '}
+                className={'flex justify-between items-center w-full h-16 font-bold fixed  text-white z-[1000]'}
                 style={navbarStyle}
             >
                 {/*<img src={logo} className={'w-36 relative '}/>*/}
                 <h1 className={'font-serif text-3xl'}>Evergreen</h1>
                 <ul className={'flex relative right-[10%] text-[20px] gap-[4vw]'}>
                     <li>Home</li>
-                    <li>Product</li>
+                    <li>
+                        <Link to="/teaProduct">Product</Link>
+                    </li>
                 </ul>
             </nav>
 
 
+            {/*<nav*/}
+            {/*    className={'flex justify-between items-center w-full h-16 font-bold fixed top-0 left-0 right-0 text-white '}*/}
+            {/*    style={navbarStyle}*/}
+            {/*>*/}
+            {/*    /!*<img src={logo} className={'w-36 relative '}/>*!/*/}
+            {/*    <h1 className={'font-serif text-3xl'}>Evergreen</h1>*/}
+            {/*    <ul className={'flex relative right-[10%] text-[20px] gap-[4vw]'}>*/}
+            {/*        <li>Home</li>*/}
+            {/*        <Link to={"/teaProduct"}>*/}
+            {/*            <li>Product</li>*/}
+            {/*        </Link>*/}
+            {/*    </ul>*/}
+            {/*</nav>*/}
+
+
         <div className={'w-full h-full '}>
+
             <img src={mainImage} className={'w-full h-full'}/>
 
 
 
-            <p className={'absolute top-[30%] left-[45%] text-white text-[20px] font-sans'}>HEALTH BENEFITS OF
+
+            <p className={'absolute top-[31%] left-[42.5%]  text-white text-[20px] font-sans '}> HEALTH  BENEFITS OF
                 TEA</p>
-            <p className={'absolute top-[33%] left-[43%] text-white text-[65px] font-serif'}>Evergreen</p>
-            <p className={'absolute top-[43%] left-[43.5%] text-white text-[65px] font-serif'}>Sri Lanka</p>
+            <p className={'absolute top-[33%] left-[40%] text-white text-[65px] font-serif '}>Evergreen</p>
+            <p className={'absolute top-[43%] left-[40.5%] text-white text-[65px] font-serif '}>Sri Lanka</p>
 
 
             <button
-                className={'w-36 h-10 border-2 border-white absolute bottom-[280px] left-[47.5%] text-white hover:bg-white hover:text-black'}>SHOP
+                className={'w-36 h-10 border-2 border-white absolute bottom-[260px] left-[45%] text-white hover:bg-white hover:text-black'}>SHOP
                 NOW
             </button>
         </div>
@@ -116,6 +136,17 @@ function TeaOrder() {
 
             </div>
 
+        </div>
+
+        <div className={'w-full h-[200px]  bg-[#f2f2f2]'}>
+            <img src={logo} className={'w-40 relative top-[20px] left-[20px]'}/>
+            <div className={'w-[200px] h-[150px]  text-[18px] block m-5'}>
+                <span>+94 758965845</span><br/>
+                <span>+94 758965845</span><br/>
+                <span>evergreen@gmail.com</span>
+            </div>
+
+            <p className={'text-[15px] flex items-center justify-center relative bottom-[70px]'}>Copyright © 2023 Blog LK</p>
         </div>
 
         {/*<div className={'w-full h-full bg-green-600'}>*/}

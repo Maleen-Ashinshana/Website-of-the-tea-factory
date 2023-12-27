@@ -13,6 +13,7 @@ import Fertilizer from "./view/fertilizer.tsx";
 import TeaOrder from "./view/teaOrder.tsx";
 
 
+
 ;
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
             {/*<Route path={"/fertilize"} element={<Fertilize/>}></Route>*/}
             <Route path={"/fertilizer"} element={<Fertilizer/>}></Route>
             <Route path={"/tea"} element={<TeaOrder/>}></Route>
+
 
         </Routes>
     </BrowserRouter>
