@@ -7,7 +7,7 @@ import Earl_GreyS from "../assets/images/collection1.2.jpg";
 import whiteTea from "../assets/images/White-Tea_1.jpg";
 import green_Tea from "../assets/images/collection1.4.jpg";
 import Matcha from "../assets/images/collection1.5.jpg";
-import Sencha from "../assets/images/collection1.6.jpg";
+
 import OlongTea from "../assets/images/collection1.7.jpg";
 import blackPeral from "../assets/images/blackTea/110269-removebg-preview.png";
 import {useEffect, useState} from "react";
@@ -56,11 +56,64 @@ function TeaProduct() {
     };
 
     const [isEarlDivVisible, setIsEarlDivVisible] = useState(false);
+    const [isBlackTeaDivVisible, setIsBlackTeaDivVisible] = useState(false);
+    const [isGreenTeaDivVisible, setIsGreenTeaDivVisible] = useState(false);
+    const [isMatchaTeaDivVisible, setIsMatchaTeaDivVisible] = useState(false);
+    const [isOOlongTeaDivVisible, setIsOOlongTeaDivVisible] = useState(false);
+    const [isWhiteTeaDivVisible, setIsWhiteTeaDivVisible] = useState(false);
 
     // Function to handle the click event and set isEarlDivVisible to true
     const handleEarlDiv = () => {
         setIsEarlDivVisible(true);
+        setIsBlackTeaDivVisible(false);
+        setIsGreenTeaDivVisible(false);
+        setIsMatchaTeaDivVisible(false);
+        setIsOOlongTeaDivVisible(false);
+        setIsWhiteTeaDivVisible(false);
+
     };
+    const handleBlackTeaDiv = () => {
+        setIsBlackTeaDivVisible(true);
+        setIsEarlDivVisible(false);
+        setIsGreenTeaDivVisible(false);
+        setIsMatchaTeaDivVisible(false);
+        setIsOOlongTeaDivVisible(false);
+        setIsWhiteTeaDivVisible(false);
+    };
+    const handleGreenTealDiv = () => {
+        setIsBlackTeaDivVisible(false);
+        setIsEarlDivVisible(false);
+        setIsGreenTeaDivVisible(true);
+        setIsMatchaTeaDivVisible(false);
+        setIsOOlongTeaDivVisible(false);
+        setIsWhiteTeaDivVisible(false);
+    };
+    const handleMatchaTealDiv = () => {
+        setIsBlackTeaDivVisible(false);
+        setIsEarlDivVisible(false);
+        setIsGreenTeaDivVisible(false);
+        setIsMatchaTeaDivVisible(true);
+        setIsOOlongTeaDivVisible(false);
+        setIsWhiteTeaDivVisible(false);
+    };
+    const handleOolongTealDiv = () => {
+        setIsBlackTeaDivVisible(false);
+        setIsEarlDivVisible(false);
+        setIsGreenTeaDivVisible(false);
+        setIsMatchaTeaDivVisible(false);
+        setIsOOlongTeaDivVisible(true);
+        setIsWhiteTeaDivVisible(false);
+    };
+
+    const handleWhiteTealDiv = () => {
+        setIsBlackTeaDivVisible(false);
+        setIsEarlDivVisible(false);
+        setIsGreenTeaDivVisible(false);
+        setIsMatchaTeaDivVisible(false);
+        setIsOOlongTeaDivVisible(false);
+        setIsWhiteTeaDivVisible(true);
+    };
+
 
 
     return <section className={'w-full h-screen'}>
@@ -93,7 +146,7 @@ function TeaProduct() {
                           className={'absolute left-0 right-0 top-[10px] bottom-[0%] m-auto opacity-100 /*border-2 border-fuchsia-200*/ w-full'}>
                     <div className={' h-[200px] {/*border-2 border-blue-500*/} w-40 relative '}>
                         <img src={all}
-                             className={'absolute left-0 right-0 top-0 bottom-0 m-auto w-32 h-32 rounded-[100px] hover:border-[5px] hover:border-[#9baa71]'}/>
+                             className={'absolute left-0 right-0 top-0 bottom-0 m-auto w-32 h-32 rounded-[100px] hover:border-[5px] hover:border-[#9baa71]'}onClick={handleBlackTeaDiv}/>
                         <p className={' absolute left-[30%] bottom-0'}>Black Tea</p>
                     </div>
                     <div className={' {/*border-2 border-black*/} h-[200px] w-40 relative left-[-35%]'}>
@@ -109,27 +162,27 @@ function TeaProduct() {
                     </div>*/}
                     <div className={' h-[200px] {/*border-2 border-red-400*/} w-40  relative left-[-75%]'}>
                         <img src={green_Tea}
-                             className={'absolute left-0 right-0 top-0 bottom-0 m-auto w-32 h-32 rounded-[100px] hover:border-[5px] hover:border-[#9baa71]'}/>
+                             className={'absolute left-0 right-0 top-0 bottom-0 m-auto w-32 h-32 rounded-[100px] hover:border-[5px] hover:border-[#9baa71]'} onClick={handleGreenTealDiv}/>
                         <p className={'absolute left-[25%] bottom-0'}>GREEN TEA</p>
                     </div>
                     <div className={' h-[200px] {/*border-2 border-sky-500*/} w-40    relative left-[-115%]'}>
                         <img src={Matcha}
-                             className={'absolute left-0 right-0 top-0 bottom-0 m-auto w-32 h-32 rounded-[100px] hover:border-[5px] hover:border-[#9baa71]'}/>
+                             className={'absolute left-0 right-0 top-0 bottom-0 m-auto w-32 h-32 rounded-[100px] hover:border-[5px] hover:border-[#9baa71]'} onClick={handleMatchaTealDiv}/>
                         <p className={'absolute left-[35%] bottom-0'}>MATCHA</p>
                     </div>
-                    <div className={' h-[200px] {/*border-2 border-y-amber-500*/} w-40  relative left-[-155%]'}>
-                        <img src={Sencha}
-                             className={'absolute left-0 right-0 top-0 bottom-0 m-auto w-32 h-32 rounded-[100px] hover:border-[5px] hover:border-[#9baa71]'}/>
-                        <p className={'absolute left-[40%] bottom-0'}>SENCHA</p>
-                    </div>
-                    <div className={' h-[200px] {/*border-2 border-orange-500*/} w-40   relative left-[-195%]'}>
+                    {/*<div className={' h-[200px] /!*border-2 border-y-amber-500*!/ w-40  relative '}>*/}
+                    {/*    <img src={Sencha}*/}
+                    {/*         className={'absolute left-0 right-0 top-0 bottom-0 m-auto w-32 h-32 rounded-[100px] hover:border-[5px] hover:border-[#9baa71]'}onClick={handleEarlDiv}/>*/}
+                    {/*    <p className={'absolute left-[40%] bottom-0'}>SENCHA</p>*/}
+                    {/*</div>*/}
+                    <div className={' h-[200px] {/*border-2 border-orange-500*/} w-40   relative left-[-155%]'}>
                         <img src={OlongTea}
-                             className={'absolute left-0 right-0 top-0 bottom-0 m-auto w-32 h-32 rounded-[100px] hover:border-[5px] hover:border-[#9baa71]'}/>
+                             className={'absolute left-0 right-0 top-0 bottom-0 m-auto w-32 h-32 rounded-[100px] hover:border-[5px] hover:border-[#9baa71]'} onClick={handleOolongTealDiv}/>
                         <p className={'absolute left-[22%] bottom-0'}>OOLONG TEA</p>
                     </div>
-                    <div className={' h-[200px] {/*border-2 border-orange-500*/} w-40   relative left-[-240%]'}>
+                    <div className={' h-[200px] {/*border-2 border-orange-500*/} w-40   relative left-[-195%]'}>
                         <img src={whiteTea}
-                             className={'absolute left-0 right-0 top-0 bottom-0 m-auto w-32 h-32 rounded-[100px] hover:border-[5px] hover:border-[#9baa71]'}/>
+                             className={'absolute left-0 right-0 top-0 bottom-0 m-auto w-32 h-32 rounded-[100px] hover:border-[5px] hover:border-[#9baa71]'} onClick={handleWhiteTealDiv}/>
                         <p className={'absolute left-[30%] bottom-0'}>White TEA</p>
                     </div>
                 </Carousel>
@@ -142,45 +195,114 @@ function TeaProduct() {
         </div>
 
         <div className={'w-full h-[80%] bg-white absolute bottom-[-68%]'}>
-            <h1 className={'flex items-center justify-center relative top-12 text-[25px]'}>All Items</h1>
 
-            <div className={'w-full h-screen border-2 border-black relative top-12 '}>
-                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
-                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
-                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
-                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
-                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
-                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
-                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
-                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
-                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
-                {/*<div className={'w-[280px] h-[300px]  border-2 border-blue-500 mt-5 ml-5 inline-block'}>
 
-                </div>
-                <div className={'w-[280px] h-[300px]  border-2 border-blue-500 mt-5 ml-5 inline-block'}>
+                <div className={'w-full h-screen  relative top-12 '} id={'blackTeaDiv'}>
+                    <h1 className={'flex items-center justify-center relative top-0 text-[25px]'}>Black Tea</h1>
+                    <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                    <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                    <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                    <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                    <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                    <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                    <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                    <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                    <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+
 
                 </div>
-                <div className={'w-[280px] h-[300px]  border-2 border-blue-500 mt-5 ml-5 inline-block'}>
 
-                </div>
-                <div className={'w-[280px] h-[300px]  border-2 border-blue-500 mt-5 ml-5 inline-block'}>
 
-                </div>
-                <div className={'w-[280px] h-[300px]  border-2 border-blue-500 mt-5 ml-5 inline-block'}>
-
-                </div>*/}
-
-            </div>
 
         </div>
-        {/*<div className={'w-full h-[80%] bg-green-600 hidden'} id={'earlDiv'}>
-
-        </div>*/}
         {isEarlDivVisible && (
-            <div className={'w-full h-[80%] bg-green-600'} id={'earlDiv'}>
-                {/* Content of your earlDiv */}
+        <div className={'w-full h-screen bg-white absolute top-[94.5%]'} id={'earlDiv'}>
+            <h1 className={'flex items-center justify-center relative top-0 text-[25px]'}>Earl Gayes Tea</h1>
+            <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+            <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+            <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+            <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+            <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+            <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+            <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+            <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+            <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+
+
+        </div>
+        )}
+
+        {isGreenTeaDivVisible && (
+            <div className={'w-full h-screen bg-white absolute top-[94.5%]'} id={'greenTeaDiv'}>
+                <h1 className={'flex items-center justify-center relative top-0 text-[25px]'}>Green Tea</h1>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+
+
             </div>
         )}
+
+        {isMatchaTeaDivVisible && (
+            <div className={'w-full h-screen bg-white absolute top-[94.5%]'} id={'matchaTeaDiv'}>
+                <h1 className={'flex items-center justify-center relative top-0 text-[25px]'}>Matcha Tea</h1>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+
+
+            </div>
+        )}
+
+        {isOOlongTeaDivVisible && (
+            <div className={'w-full h-screen bg-white absolute top-[94.5%]'} id={'OOLongTeaDiv'}>
+                <h1 className={'flex items-center justify-center relative top-0 text-[25px]'}>OOLONG Tea</h1>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+
+
+            </div>
+        )}
+        {isWhiteTeaDivVisible && (
+            <div className={'w-full h-screen bg-white absolute top-[94.5%]'} id={'whiteTeaDiv'}>
+                <h1 className={'flex items-center justify-center relative top-0 text-[25px]'}>White Tea</h1>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+
+
+            </div>
+        )}
+        {/*{isEarlDivVisible && (
+            <div className={'w-full h-[80%] bg-green-600 absolute bottom-[-68%] '} id={'earlDiv'}>
+                 Content of your earlDiv
+            </div>
+        )}*/}
 
 
     </section>
