@@ -11,6 +11,7 @@ import Sencha from "../assets/images/collection1.6.jpg";
 import OlongTea from "../assets/images/collection1.7.jpg";
 import blackPeral from "../assets/images/blackTea/110269-removebg-preview.png";
 import {useEffect, useState} from "react";
+import TeaProducts from "../component/card/teaProducts.tsx";
 
 
 function TeaProduct() {
@@ -144,22 +145,15 @@ function TeaProduct() {
             <h1 className={'flex items-center justify-center relative top-12 text-[25px]'}>All Items</h1>
 
             <div className={'w-full h-screen border-2 border-black relative top-12 '}>
-                <div className={'w-[280px] h-[300px]  {/*border-2 border-blue-500*/} mt-5 ml-5 inline-block hover:shadow-2xl'}>
-                    <div className={'w-full h-[80%] {/*border-2 border-black*/} bg-gray-200 '}>
-                        <div
-                            className={'w-[80%] h-[80%] /*border-2 border-orange-500*/ relative left-0 right-0 top-[20px] bottom-0 m-auto'}>
-                            <img src={blackPeral} className={'w-full h-full '}/>
-                        </div>
-
-                    </div>
-                   <p className={'font-bold flex items-center justify-center text-[18px]'}>Black Pearl</p>
-                   <p className={'font-bold flex items-center justify-center text-[18px]'}>price :
-                       <span className={'font-mono text-[#9baa71]'}> RS.
-                           <span>180</span>
-                       </span>
-                   </p>
-
-                </div>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
                 {/*<div className={'w-[280px] h-[300px]  border-2 border-blue-500 mt-5 ml-5 inline-block'}>
 
                 </div>
