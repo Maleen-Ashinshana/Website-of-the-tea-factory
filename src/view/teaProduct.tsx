@@ -12,6 +12,7 @@ import OlongTea from "../assets/images/collection1.7.jpg";
 import blackPeral from "../assets/images/blackTea/110269-removebg-preview.png";
 import {useEffect, useState} from "react";
 import TeaProducts from "../component/card/teaProducts.tsx";
+import logo from "../assets/images/Evergreen_Logo_Primary_Full_4Col.png";
 
 
 function TeaProduct() {
@@ -199,6 +200,8 @@ function TeaProduct() {
 
                 <div className={'w-full h-screen  relative top-12 '} id={'blackTeaDiv'}>
                     <h1 className={'flex items-center justify-center relative top-0 text-[25px]'}>Black Tea</h1>
+                    <TeaProducts image={blackPeral} title={'Black Peral'} price={100} />
+                    {/*<TeaProducts image={blackPeral} title={"Black Peral"} price={100} />
                     <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
                     <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
                     <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
@@ -206,9 +209,7 @@ function TeaProduct() {
                     <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
                     <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
                     <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
-                    <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
-                    <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
-
+                    <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>*/}
 
                 </div>
 
@@ -303,6 +304,16 @@ function TeaProduct() {
                  Content of your earlDiv
             </div>
         )}*/}
+        <div className={'w-full h-[200px]  bg-[#f2f2f2] absolute bottom-[-120%]'}>
+            <img src={logo} className={'w-40 relative top-[20px] left-[20px]'}/>
+            <div className={'w-[200px] h-[150px]  text-[18px] block m-5'}>
+                <span>+94 758965845</span><br/>
+                <span>+94 758965845</span><br/>
+                <span>evergreen@gmail.com</span>
+            </div>
+
+            <p className={'text-[15px] flex items-center justify-center relative bottom-[70px] '}>Copyright © 2023 Blog LK</p>
+        </div>
 
 
     </section>
