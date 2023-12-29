@@ -86,18 +86,36 @@ function TeaItem(props: TeaDetailsProps) {
                 <button className={'gram-btn'}>500G</button>
                 <div className={'w-full h-24 border-2 border-white mt-2'}>
                     <div className={'w-24 h-20 border-[3px] border-black m-2'}>
-                        <button className={'w-[50%] h-[50%] border-[1px] border-s-black border-b-black relative left-[46px] font-bold text-[20px] text-center'}>+</button>
-                        <button className={'w-[50%] h-[50%] border-[1px] border-s-black border-b-black relative left-0 top-[50%] font-bold text-[20px] text-center'}>-</button>
+                        <button
+                            className={'w-[50%] h-[50%] border-[1px] border-s-black border-b-black relative left-[46px] font-bold text-[20px] text-center'}>+
+                        </button>
+                        <button
+                            className={'w-[50%] h-[50%] border-[1px] border-s-black border-b-black relative left-0 top-[50%] font-bold text-[20px] text-center'}>-
+                        </button>
                         {/*<div className={'w-[50%] h-[50%] border-2 border-fuchsia-200 relative left-[48px]'}>
 
                         </div>*/}
 
                     </div>
-                    <button className={'w-[40%] h-10 bg-[#98a86d] relative bottom-[100%] left-[45%] text-white hover:bg-black'}>Add To Cart</button>
-                    <button className={'w-[60%] h-10 bg-black relative bottom-[45%] right-[5%] text-white hover:bg-[#98a86d]'}>BY IT NOW</button>
+                    <button
+                        className={'w-[40%] h-10 bg-[#98a86d] relative bottom-[100%] left-[45%] text-white hover:bg-black'}>Add
+                        To Cart
+                    </button>
+                    <button
+                        className={'w-[60%] h-10 bg-black relative bottom-[45%] right-[5%] text-white hover:bg-[#98a86d]'}>BY
+                        IT NOW
+                    </button>
                 </div>
             </div>
+        </div>
+        <div className={'w-[45%] h-[40%] border-[1px] border-b-gray-200 border-l-gray-200 border-r-black absolute right-0 top-[9%] mt-5 '}>
 
+            <input name={'email'} type={"email"} placeholder={'Enter Your Email'} className={'outline-none w-[80%] h-10 border-[1px] border-gray-300 focus:border-blue-500 mt-5 ml-20 '}/>
+            <input name={'firstName'} type={"text"} placeholder={'First Name'} className={'outline-none w-[34%] h-10 border-[1px] border-gray-300 focus:border-blue-500 mt-5 ml-20 '}/>
+            <input name={'lastName'} type={"text"} placeholder={'Last Name'} className={'outline-none w-[34%] h-10 border-[1px] border-gray-300 focus:border-blue-500 mt-5 ml-20 '}/>
+            <input name={'address'} type={"text"} placeholder={'Address'} className={'outline-none w-[80%] h-10 border-[1px] border-gray-300 focus:border-blue-500 mt-5 ml-20 '}/>
+            <input name={'city'} type={"text"} placeholder={'City'} className={'outline-none w-[34%] h-10 border-[1px] border-gray-300 focus:border-blue-500 mt-5 ml-20 '}/>
+            <input name={'postalCode'} type={"text"} placeholder={'Postal Code'} className={'outline-none w-[34%] h-10 border-[1px] border-gray-300 focus:border-blue-500 mt-5 ml-20 '}/>
 
         </div>
     </section>;
