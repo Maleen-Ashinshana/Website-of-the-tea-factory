@@ -8,5 +8,8 @@
     .order-fertilizer-btn{
         @apply w-[100px] h-8 bg-red-600 relative left-[150px] font-bold text-white rounded-[7px] hover:bg-red-700
     }
+    .gram-btn{
+        @apply w-20 h-10 border-2 border-gray-400 text-gray-400 ml-4 hover:bg-black hover:text-white hover:border-black
+    }
 
 }

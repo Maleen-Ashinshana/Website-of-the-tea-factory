@@ -141,16 +141,16 @@ function TeaProduct() {
         <div className={'w-full h-[80%]  absolute top-[62px] bg-[#DCDCDC] bg-opacity-50'}>
             <p className={'text-[50px] flex items-center justify-center relative top-[140px] text-black opacity-100'}>Products</p>
             <div
-                className={' w-[60%] h-[40%]  absolute left-0 right-0 top-0 bottom-0 m-auto /*border-2 border-orange-500*/'}>
+                className={' w-[60%] h-[40%]  absolute left-0 right-0 top-0 bottom-0 m-auto '}>
 
                 <Carousel responsive={responsive}
-                          className={'absolute left-0 right-0 top-[10px] bottom-[0%] m-auto opacity-100 /*border-2 border-fuchsia-200*/ w-full'}>
-                    <div className={' h-[200px] {/*border-2 border-blue-500*/} w-40 relative '}>
+                          className={'absolute left-0 right-0 top-[10px] bottom-[0%] m-auto opacity-100  w-full'}>
+                    <div className={' h-[200px]  w-40 relative '}>
                         <img src={all}
                              className={'absolute left-0 right-0 top-0 bottom-0 m-auto w-32 h-32 rounded-[100px] hover:border-[5px] hover:border-[#9baa71]'}onClick={handleBlackTeaDiv}/>
                         <p className={' absolute left-[30%] bottom-0'}>Black Tea</p>
                     </div>
-                    <div className={' {/*border-2 border-black*/} h-[200px] w-40 relative left-[-35%]'}>
+                    <div className={'  h-[200px] w-40 relative left-[-35%]'}>
                         <img src={Earl_GreyS}
                              className={'absolute left-0 right-0 top-0 bottom-0 m-auto w-32 h-32 rounded-[100px] hover:border-[5px] hover:border-[#9baa71]'}
                              onClick={handleEarlDiv}/>
@@ -161,12 +161,12 @@ function TeaProduct() {
                              className={'absolute left-0 right-0 top-0 bottom-0 m-auto w-32 h-32 rounded-[100px] hover:border-[5px] hover:border-[#9baa71]'}/>
                         <p className={'absolute left-[23%] bottom-0'}>MASALA CHAI</p>
                     </div>*/}
-                    <div className={' h-[200px] {/*border-2 border-red-400*/} w-40  relative left-[-75%]'}>
+                    <div className={' h-[200px]  w-40  relative left-[-75%]'}>
                         <img src={green_Tea}
                              className={'absolute left-0 right-0 top-0 bottom-0 m-auto w-32 h-32 rounded-[100px] hover:border-[5px] hover:border-[#9baa71]'} onClick={handleGreenTealDiv}/>
                         <p className={'absolute left-[25%] bottom-0'}>GREEN TEA</p>
                     </div>
-                    <div className={' h-[200px] {/*border-2 border-sky-500*/} w-40    relative left-[-115%]'}>
+                    <div className={' h-[200px]  w-40    relative left-[-115%]'}>
                         <img src={Matcha}
                              className={'absolute left-0 right-0 top-0 bottom-0 m-auto w-32 h-32 rounded-[100px] hover:border-[5px] hover:border-[#9baa71]'} onClick={handleMatchaTealDiv}/>
                         <p className={'absolute left-[35%] bottom-0'}>MATCHA</p>
@@ -176,12 +176,12 @@ function TeaProduct() {
                     {/*         className={'absolute left-0 right-0 top-0 bottom-0 m-auto w-32 h-32 rounded-[100px] hover:border-[5px] hover:border-[#9baa71]'}onClick={handleEarlDiv}/>*/}
                     {/*    <p className={'absolute left-[40%] bottom-0'}>SENCHA</p>*/}
                     {/*</div>*/}
-                    <div className={' h-[200px] {/*border-2 border-orange-500*/} w-40   relative left-[-155%]'}>
+                    <div className={' h-[200px] w-40   relative left-[-155%]'}>
                         <img src={OlongTea}
                              className={'absolute left-0 right-0 top-0 bottom-0 m-auto w-32 h-32 rounded-[100px] hover:border-[5px] hover:border-[#9baa71]'} onClick={handleOolongTealDiv}/>
                         <p className={'absolute left-[22%] bottom-0'}>OOLONG TEA</p>
                     </div>
-                    <div className={' h-[200px] {/*border-2 border-orange-500*/} w-40   relative left-[-195%]'}>
+                    <div className={' h-[200px]  w-40   relative left-[-195%]'}>
                         <img src={whiteTea}
                              className={'absolute left-0 right-0 top-0 bottom-0 m-auto w-32 h-32 rounded-[100px] hover:border-[5px] hover:border-[#9baa71]'} onClick={handleWhiteTealDiv}/>
                         <p className={'absolute left-[30%] bottom-0'}>White TEA</p>
@@ -200,7 +200,7 @@ function TeaProduct() {
 
                 <div className={'w-full h-screen  relative top-12 '} id={'blackTeaDiv'}>
                     <h1 className={'flex items-center justify-center relative top-0 text-[25px]'}>Black Tea</h1>
-                    <TeaProducts image={blackPeral} title={'Black Peral'} price={100} />
+                    <TeaProducts image={blackPeral} title={'Black Peral'} price={100}  />
                     {/*<TeaProducts image={blackPeral} title={"Black Peral"} price={100} />
                     <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
                     <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
