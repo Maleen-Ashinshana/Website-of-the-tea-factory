@@ -208,10 +208,25 @@ function TeaItem(props: TeaDetailsProps) {
                   </div>*/}
               </div>
 
-          </div>
 
-        </div>
-       {/* <div className={'w-[45%] h-[40%] border-[1px] border-b-gray-200 border-l-gray-200 border-r-black absolute right-0 top-[9%] mt-5 '}>
+
+          </div>
+            <div className={'w-[60%] h-[60%] absolute left-0 right-0 top-0 bottom-0 m-auto shadow-2xl'}>
+                <p className={'flex items-center justify-center font-bold text-[30px]'}> Delivery Details</p>
+                <input name={'email'} type={"email"} placeholder={'Enter Your Email'} className={'outline-none w-[80%] h-10 border-[1px] border-gray-300 focus:border-blue-500 mt-5 ml-20 '}/>
+                <input name={'firstName'} type={"text"} placeholder={'First Name'} className={'outline-none w-[35.5%] h-10 border-[1px] border-gray-300 focus:border-blue-500 mt-5 ml-20 '}/>
+                <input name={'lastName'} type={"text"} placeholder={'Last Name'} className={'outline-none w-[35.5%] h-10 border-[1px] border-gray-300 focus:border-blue-500 mt-5 ml-20 '}/>
+                <input name={'address'} type={"text"} placeholder={'Address'} className={'outline-none w-[80%] h-10 border-[1px] border-gray-300 focus:border-blue-500 mt-5 ml-20 '}/>
+                <input name={'contact number 1'} type={"text"} placeholder={'Contact number 1'} className={'outline-none w-[35.5%] h-10 border-[1px] border-gray-300 focus:border-blue-500 mt-5 ml-20 '}/>
+                <input name={'contact number 2'} type={"text"} placeholder={'Contact number 2'} className={'outline-none w-[35.5%] h-10 border-[1px] border-gray-300 focus:border-blue-500 mt-5 ml-20 '}/>
+                <input name={'city'} type={"text"} placeholder={'City'} className={'outline-none w-[35.5%] h-10 border-[1px] border-gray-300 focus:border-blue-500 mt-5 ml-20 '}/>
+                <input name={'postalCode'} type={"text"} placeholder={'Postal Code'} className={'outline-none w-[35.5%] h-10 border-[1px] border-gray-300 focus:border-blue-500 mt-5 ml-20 '}/>
+
+                <button className={'w-44 h-12 absolute left-0 right-0 m-auto bottom-[10px] bg-[#1C1F7D] rounded-[30px] text-white font-bold'}>Place Order</button>
+
+
+            </div>
+            {/* <div className={'w-[80%] h-[80%] border-[1px] border-b-gray-200 border-l-gray-200 border-r-black absolute right-0 top-[9%] mt-5  border-orange-500'}>
 
             <input name={'email'} type={"email"} placeholder={'Enter Your Email'} className={'outline-none w-[80%] h-10 border-[1px] border-gray-300 focus:border-blue-500 mt-5 ml-20 '}/>
             <input name={'firstName'} type={"text"} placeholder={'First Name'} className={'outline-none w-[34%] h-10 border-[1px] border-gray-300 focus:border-blue-500 mt-5 ml-20 '}/>
@@ -221,6 +236,9 @@ function TeaItem(props: TeaDetailsProps) {
             <input name={'postalCode'} type={"text"} placeholder={'Postal Code'} className={'outline-none w-[34%] h-10 border-[1px] border-gray-300 focus:border-blue-500 mt-5 ml-20 '}/>
 
         </div>*/}
+
+        </div>
+
     </section>;
 }
 
