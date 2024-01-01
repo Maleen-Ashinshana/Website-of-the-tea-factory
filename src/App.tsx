@@ -13,7 +13,7 @@ import Fertilizer from "./view/fertilizer.tsx";
 import TeaOrder from "./view/teaOrder.tsx";
 import TeaProduct from "./view/teaProduct.tsx";
 import TeaItem from "./view/teaItem.tsx";
-import Bu from "./view/bu.tsx";
+
 
 
 
@@ -41,6 +41,7 @@ function App() {
             <Route path={"/tea"} element={<TeaOrder/>}></Route>
             <Route path={"/teaProduct"} element={<TeaProduct/>}></Route>
             <Route path={"/teaItem"} element={<TeaItem/>}></Route>
+
 
 
 

@@ -1,10 +1,11 @@
 // TeaItem.tsx
 
 
-import {useEffect, useState} from "react";
+
 import {Link} from "react-router-dom";
 import searchIcon from "../assets/images/magnifying-glass.png";
-
+import { FaPen, FaTrash } from "react-icons/fa";
+import {useEffect, useState} from "react";
 
 
 interface TeaDetailsProps {
@@ -12,32 +13,33 @@ interface TeaDetailsProps {
     title: string;
     price: number;
 }
-interface Data{
-    id:number,
-    name:string
-    the_price_of_one:number,
-    the_size_ordered:string,
-    qty:number,
-    price:number
+
+interface Data {
+    id: number,
+    name: string
+    the_price_of_one: number,
+    the_size_ordered: string,
+    qty: number,
+    price: number
 }
 
 function TeaItem(props: TeaDetailsProps) {
-    const data:Data[]=[
+    const data: Data[] = [
         {
-            id:1,
-            name:"item1",
-            the_price_of_one:100,
-            the_size_ordered:"100g",
-            qty:2,
-            price:800
+            id: 1,
+            name: "item1",
+            the_price_of_one: 100,
+            the_size_ordered: "100g",
+            qty: 2,
+            price: 800
         },
         {
-            id:1,
-            name:"item2",
-            the_price_of_one:100,
-            the_size_ordered:"100g",
-            qty:2,
-            price:800
+            id: 1,
+            name: "item2",
+            the_price_of_one: 100,
+            the_size_ordered: "100g",
+            qty: 2,
+            price: 800
         },
 
     ]
@@ -63,7 +65,7 @@ function TeaItem(props: TeaDetailsProps) {
     }, []);
 
     const navbarStyle = {
-        backgroundColor: isScrolled ? 'rgba(164, 162, 162, 0.25)' : 'transparent',
+        backgroundColor: isScrolled ? 'rgba(164, 162, 162, 1)' : 'transparent',
         transition: 'background-color 0.3s ease', // Optional: Add a smooth transition effect
     };
     useEffect(() => {
@@ -95,8 +97,8 @@ function TeaItem(props: TeaDetailsProps) {
 
             </ul>
             <div className={'w-[400px] h-13  relative right-[100px]  '}>
-                <input type={"search"} name={'search'} placeholder={'Search Tea Products!...'}
-                       className={'outline-none border-[1px] border-black w-full h-[35px] text-[18px] rounded-[50px] text-center font-mohave bg-transparent relative top-[0px]'}/>
+                <input type={"search"} name={'search'} placeholder={'Search Tea Products!...' }
+                       className={'outline-none border-[1px] border-black w-full h-[35px] text-[18px] rounded-[50px] text-center font-mohave bg-transparent relative top-[0px] text-black'}/>
             </div>
             <img src={searchIcon} className={'w-[30px] absolute right-[55px] top-[18px]'}/>
         </nav>
@@ -107,14 +109,14 @@ function TeaItem(props: TeaDetailsProps) {
             </div>
 
             {/*item Ekata adala Nama ha price ekata*/}
-            <div className={'w-[300px] h-[100px] absolute top-0 left-[53%] m-5 border-2 border-gray-400'}>
+            <div className={'w-[300px] h-[100px] absolute top-0 left-[53%] m-5 '}>
                 <p className={'font-bold text-[20px]'}>Name :</p>
                 <p className={'font-bold text-[20px] mt-5'}>Price :
 
                 </p>
 
             </div>
-            <div className={'w-[400px] h-[200px] absolute top-[18%] left-[54%] border-2 border-blue-500'}>
+            <div className={'w-[400px] h-[200px] absolute top-[16%] left-[54.3%] '}>
                 <p className={'border-2 border-b-black border-t-white border-l-white border-r-white w-[50px] m-3'}>SIZE</p>
                 <button className={'gram-btn'}>50G</button>
                 <button className={'gram-btn'}>100G</button>
@@ -143,27 +145,36 @@ function TeaItem(props: TeaDetailsProps) {
                     </button>
                 </div>
             </div>
-            <div className={'w-[80%] h-[45%]  absolute left-0 right-0 top-[400px] bottom-0 m-auto border-2 border-black'}>
-                <table>
-                    <thead className={'bg-[#dcdcdc]'}>
+            <div
+                className={'w-[90%] h-[45%]  absolute left-0 right-0 top-[400px] bottom-0 m-auto bg-white '}>
+                <table className={'w-full'}>
+                    <thead className={'bg-black text-white text-center  '}>
                     <tr>
-                        <th className={'py-3'}>Item Name</th>
-                        <th className={'py-3'}>The Price Of One</th>
-                        <th className={'py-3'}>The Size Ordered</th>
-                        <th className={'py-3'}>Qty</th>
-                        <th className={'py-3'}>price</th>
+                        <th className={'py-3  border-[1px] border-r-gray-500'}>Item Name</th>
+                        <th className={'py-3 border-[1px] border-r-gray-500'}>The Price Of One</th>
+                        <th className={'py-3 border-[1px] border-r-gray-500'}>The Size Ordered</th>
+                        <th className={'py-3 border-[1px] border-r-gray-500'}>Qty</th>
+                        <th className={'py-3 border-[1px] border-r-gray-500'}>price</th>
+                        <th className={'py-3 border-[1px] border-r-gray-500'}>Actions</th>
                     </tr>
 
                     </thead>
                     <tbody>
                     {
-                        data.map((r:Data)=>{
-                            return<tr className={'border-b  '}>
-                                <td className={'w-[20%] relative left-[100px]'}>{r.name}</td>
-                                <td className={'w-[10%] relative left-[100px]'}>{r.the_price_of_one}</td>
-                                <td className={'w-[10%] relative left-[100px]'}>{r.the_size_ordered}</td>
-                                <td className={'w-[10%] relative left-[100px]'}>{r.qty}</td>
-                                <td className={'w-[10%] relative left-[100px]'}>{r.price}</td>
+                        data.map((r: Data) => {
+                            return <tr className={'border-b '}>
+                                <td className={'w-[20%] relative left-[100px] py-3'}>{r.name}</td>
+                                <td className={'w-[10%] relative left-[100px] py-3'}>{r.the_price_of_one}</td>
+                                <td className={'w-[10%] relative left-[100px] py-3'}>{r.the_size_ordered}</td>
+                                <td className={'w-[10%] relative left-[100px] py-3'}>{r.qty}</td>
+                                <td className={'w-[12%] relative left-[100px] py-3'}>{r.price}</td>
+                                <td className={'w-[15%] relative left-[100px] py-3'}>
+                                   {/* <button className={'bg-blue-600 text-white p-1 rounded-full mx-2'}><FaEye/></button>*/}
+                                    <button className={'bg-green-600 text-white p-1 rounded-full mx-2'}><FaPen/>
+                                    </button>
+                                    <button className={'bg-red-600 text-white p-1 rounded-full mx-2'}><FaTrash/>
+                                    </button>
+                                </td>
                             </tr>
                         })
 
@@ -175,54 +186,69 @@ function TeaItem(props: TeaDetailsProps) {
 
 
         </div>
-        <div className={'w-full h-screen border-2 border-black absolute bottom-[-110%] bg-white'}>
-             <div className={'w-56 h-16 absolute right-[20px] top-[1%] '}>
-                <label className={'flex items-center justify-center font-bold text-[30px]'}>Total : <span>1800</span></label>
+        <div className={'w-full h-screen  absolute bottom-[-111.5%] bg-white]'}>
+
+            {/*Ithem Gogak table ekata add karanna ona unoth*/}
+
+            <button className={'w-44 h-10 bg-[#98a86d] absolute right-4 text-white top-5 hover:bg-green-600'}>Continue Shopping</button>
+            <div className={'w-56 h-16 absolute right-[20px] top-[15%]'}>
+                <label className={'flex items-center justify-center font-bold text-[30px]'}>Total
+                    : <span>1800</span></label>
             </div>
-          <div className={'w-[400px] h-16 absolute left-[20px]  top-[10%] m-auto font-bold text-[18px]'}>
-              <div>
-                  <label>
-                      <input
-                          type="radio"
-                          value="option1"
-                          checked={selectedOption === "option1"}
-                          onChange={handleOptionChange}
-                          className={'relative ml-5'}
-                      />
-                      Cash On Delivery
-                  </label>
+            <div className={'w-[400px] h-16 absolute left-[20px]  top-[20%] m-auto font-bold text-[18px]'}>
+                <div>
+                    <label>
+                        <input
+                            type="radio"
+                            value="option1"
+                            checked={selectedOption === "option1"}
+                            onChange={handleOptionChange}
+                            className={'relative ml-5'}
+                        />
+                        Cash On Delivery
+                    </label>
 
-                  <label>
-                      <input
-                          type="radio"
-                          value="option2"
-                          checked={selectedOption === "option2"}
-                          onChange={handleOptionChange}
-                          className={'relative ml-5'}
-                      />
-                      Card Payment
-                  </label>
+                    <label>
+                        <input
+                            type="radio"
+                            value="option2"
+                            checked={selectedOption === "option2"}
+                            onChange={handleOptionChange}
+                            className={'relative ml-5'}
+                        />
+                        Card Payment
+                    </label>
 
-                  {/*<div>
+                    {/*<div>
                       Selected Option: {selectedOption}
                   </div>*/}
-              </div>
+                </div>
 
 
-
-          </div>
-            <div className={'w-[60%] h-[60%] absolute left-0 right-0 top-0 bottom-0 m-auto shadow-2xl'}>
+            </div>
+            <div className={'w-[60%] h-[60%] absolute left-0 right-0 top-[30%] bottom-0 m-auto shadow-2xl '}>
                 <p className={'flex items-center justify-center font-bold text-[30px]'}> Delivery Details</p>
-                <input name={'email'} type={"email"} placeholder={'Enter Your Email'} className={'outline-none w-[80%] h-10 border-[1px] border-gray-300 focus:border-blue-500 mt-5 ml-20 '}/>
-                <input name={'firstName'} type={"text"} placeholder={'First Name'} className={'outline-none w-[35.5%] h-10 border-[1px] border-gray-300 focus:border-blue-500 mt-5 ml-20 '}/>
-                <input name={'lastName'} type={"text"} placeholder={'Last Name'} className={'outline-none w-[35.5%] h-10 border-[1px] border-gray-300 focus:border-blue-500 mt-5 ml-20 '}/>
-                <input name={'address'} type={"text"} placeholder={'Address'} className={'outline-none w-[80%] h-10 border-[1px] border-gray-300 focus:border-blue-500 mt-5 ml-20 '}/>
-                <input name={'contact number 1'} type={"text"} placeholder={'Contact number 1'} className={'outline-none w-[35.5%] h-10 border-[1px] border-gray-300 focus:border-blue-500 mt-5 ml-20 '}/>
-                <input name={'contact number 2'} type={"text"} placeholder={'Contact number 2'} className={'outline-none w-[35.5%] h-10 border-[1px] border-gray-300 focus:border-blue-500 mt-5 ml-20 '}/>
-                <input name={'city'} type={"text"} placeholder={'City'} className={'outline-none w-[35.5%] h-10 border-[1px] border-gray-300 focus:border-blue-500 mt-5 ml-20 '}/>
-                <input name={'postalCode'} type={"text"} placeholder={'Postal Code'} className={'outline-none w-[35.5%] h-10 border-[1px] border-gray-300 focus:border-blue-500 mt-5 ml-20 '}/>
+                <input name={'email'} type={"email"} placeholder={'Enter Your Email'}
+                       className={'outline-none w-[80%] h-10 border-[1px] border-gray-300 focus:border-blue-500 mt-5 ml-20 '}/>
+                <input name={'firstName'} type={"text"} placeholder={'First Name'}
+                       className={'outline-none w-[35.5%] h-10 border-[1px] border-gray-300 focus:border-blue-500 mt-5 ml-20 '}/>
+                <input name={'lastName'} type={"text"} placeholder={'Last Name'}
+                       className={'outline-none w-[35.5%] h-10 border-[1px] border-gray-300 focus:border-blue-500 mt-5 ml-20 '}/>
+                <input name={'address'} type={"text"} placeholder={'Address'}
+                       className={'outline-none w-[80%] h-10 border-[1px] border-gray-300 focus:border-blue-500 mt-5 ml-20 '}/>
+                <input name={'contact number 1'} type={"text"} placeholder={'Contact number 1'}
+                       className={'outline-none w-[35.5%] h-10 border-[1px] border-gray-300 focus:border-blue-500 mt-5 ml-20 '}/>
+                <input name={'contact number 2'} type={"text"} placeholder={'Contact number 2'}
+                       className={'outline-none w-[35.5%] h-10 border-[1px] border-gray-300 focus:border-blue-500 mt-5 ml-20 '}/>
+                <input name={'city'} type={"text"} placeholder={'City'}
+                       className={'outline-none w-[35.5%] h-10 border-[1px] border-gray-300 focus:border-blue-500 mt-5 ml-20 '}/>
+                <input name={'postalCode'} type={"text"} placeholder={'Postal Code'}
+                       className={'outline-none w-[35.5%] h-10 border-[1px] border-gray-300 focus:border-blue-500 mt-5 ml-20 '}/>
 
-                <button className={'w-44 h-12 absolute left-0 right-0 m-auto bottom-[10px] bg-[#1C1F7D] rounded-[30px] text-white font-bold'}>Place Order</button>
+                <button
+                    className={'w-44 h-12 absolute left-0 right-0 m-auto bottom-[10px] bg-[#1C1F7D] rounded-[30px] text-white font-bold'}>Place
+                    Order
+                </button>
 
 
             </div>
