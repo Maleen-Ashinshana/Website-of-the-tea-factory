@@ -26,7 +26,7 @@ function UserSingIn() {
 
                 </div>
                 <span className={'absolute bottom-[15%] left-[15%]'}>Don You Have An Account?
-                   <Link to={"/userSingUp"}>
+                   <Link to={"/user-sing-up"}>
                        <span className={'text-blue-700 relative left-[10px]'}>Sing Up</span>
                    </Link>
 
