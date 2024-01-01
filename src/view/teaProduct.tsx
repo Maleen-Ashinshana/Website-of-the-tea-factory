@@ -116,7 +116,6 @@ function TeaProduct() {
     };
 
 
-
     return <section className={'w-full h-screen'}>
         <nav
             className={'flex justify-between items-center w-full h-16 font-bold fixed  text-black z-[1000]  '}
@@ -126,7 +125,10 @@ function TeaProduct() {
             {/*<img src={logo} className={'w-36 relative '}/>*/}
             <h1 className={'font-serif text-3xl'}>Evergreen</h1>
             <ul className={'flex relative left-[15%]  text-[20px] gap-[4vw]'}>
-                <li>Home</li>
+                <Link to={"/tea"}>
+                    <li>Home</li>
+                </Link>
+
                 <li>
                     <Link to="/teaProduct">Product</Link>
                 </li>
@@ -147,7 +149,8 @@ function TeaProduct() {
                           className={'absolute left-0 right-0 top-[10px] bottom-[0%] m-auto opacity-100  w-full'}>
                     <div className={' h-[200px]  w-40 relative '}>
                         <img src={all}
-                             className={'absolute left-0 right-0 top-0 bottom-0 m-auto w-32 h-32 rounded-[100px] hover:border-[5px] hover:border-[#9baa71]'}onClick={handleBlackTeaDiv}/>
+                             className={'absolute left-0 right-0 top-0 bottom-0 m-auto w-32 h-32 rounded-[100px] hover:border-[5px] hover:border-[#9baa71]'}
+                             onClick={handleBlackTeaDiv}/>
                         <p className={' absolute left-[30%] bottom-0'}>Black Tea</p>
                     </div>
                     <div className={'  h-[200px] w-40 relative left-[-35%]'}>
@@ -163,12 +166,14 @@ function TeaProduct() {
                     </div>*/}
                     <div className={' h-[200px]  w-40  relative left-[-75%]'}>
                         <img src={green_Tea}
-                             className={'absolute left-0 right-0 top-0 bottom-0 m-auto w-32 h-32 rounded-[100px] hover:border-[5px] hover:border-[#9baa71]'} onClick={handleGreenTealDiv}/>
+                             className={'absolute left-0 right-0 top-0 bottom-0 m-auto w-32 h-32 rounded-[100px] hover:border-[5px] hover:border-[#9baa71]'}
+                             onClick={handleGreenTealDiv}/>
                         <p className={'absolute left-[25%] bottom-0'}>GREEN TEA</p>
                     </div>
                     <div className={' h-[200px]  w-40    relative left-[-115%]'}>
                         <img src={Matcha}
-                             className={'absolute left-0 right-0 top-0 bottom-0 m-auto w-32 h-32 rounded-[100px] hover:border-[5px] hover:border-[#9baa71]'} onClick={handleMatchaTealDiv}/>
+                             className={'absolute left-0 right-0 top-0 bottom-0 m-auto w-32 h-32 rounded-[100px] hover:border-[5px] hover:border-[#9baa71]'}
+                             onClick={handleMatchaTealDiv}/>
                         <p className={'absolute left-[35%] bottom-0'}>MATCHA</p>
                     </div>
                     {/*<div className={' h-[200px] /!*border-2 border-y-amber-500*!/ w-40  relative '}>*/}
@@ -178,12 +183,14 @@ function TeaProduct() {
                     {/*</div>*/}
                     <div className={' h-[200px] w-40   relative left-[-155%]'}>
                         <img src={OlongTea}
-                             className={'absolute left-0 right-0 top-0 bottom-0 m-auto w-32 h-32 rounded-[100px] hover:border-[5px] hover:border-[#9baa71]'} onClick={handleOolongTealDiv}/>
+                             className={'absolute left-0 right-0 top-0 bottom-0 m-auto w-32 h-32 rounded-[100px] hover:border-[5px] hover:border-[#9baa71]'}
+                             onClick={handleOolongTealDiv}/>
                         <p className={'absolute left-[22%] bottom-0'}>OOLONG TEA</p>
                     </div>
                     <div className={' h-[200px]  w-40   relative left-[-195%]'}>
                         <img src={whiteTea}
-                             className={'absolute left-0 right-0 top-0 bottom-0 m-auto w-32 h-32 rounded-[100px] hover:border-[5px] hover:border-[#9baa71]'} onClick={handleWhiteTealDiv}/>
+                             className={'absolute left-0 right-0 top-0 bottom-0 m-auto w-32 h-32 rounded-[100px] hover:border-[5px] hover:border-[#9baa71]'}
+                             onClick={handleWhiteTealDiv}/>
                         <p className={'absolute left-[30%] bottom-0'}>White TEA</p>
                     </div>
                 </Carousel>
@@ -198,10 +205,10 @@ function TeaProduct() {
         <div className={'w-full h-[80%] bg-white absolute bottom-[-68%]'}>
 
 
-                <div className={'w-full h-screen  relative top-12 '} id={'blackTeaDiv'}>
-                    <h1 className={'flex items-center justify-center relative top-0 text-[25px]'}>Black Tea</h1>
-                    <TeaProducts image={blackPeral} title={'Black Peral'} price={100}  />
-                    {/*<TeaProducts image={blackPeral} title={"Black Peral"} price={100} />
+            <div className={'w-full h-screen  relative top-12 '} id={'blackTeaDiv'}>
+                <h1 className={'flex items-center justify-center relative top-0 text-[25px]'}>Black Tea</h1>
+                <TeaProducts image={blackPeral} title={'Black Peral'} price={100}/>
+                {/*<TeaProducts image={blackPeral} title={"Black Peral"} price={100} />
                     <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
                     <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
                     <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
@@ -211,26 +218,25 @@ function TeaProduct() {
                     <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
                     <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>*/}
 
-                </div>
-
+            </div>
 
 
         </div>
         {isEarlDivVisible && (
-        <div className={'w-full h-screen bg-white absolute top-[94.5%]'} id={'earlDiv'}>
-            <h1 className={'flex items-center justify-center relative top-0 text-[25px]'}>Earl Gayes Tea</h1>
-            <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
-            <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
-            <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
-            <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
-            <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
-            <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
-            <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
-            <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
-            <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+            <div className={'w-full h-screen bg-white absolute top-[94.5%]'} id={'earlDiv'}>
+                <h1 className={'flex items-center justify-center relative top-0 text-[25px]'}>Earl Gayes Tea</h1>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
 
 
-        </div>
+            </div>
         )}
 
         {isGreenTeaDivVisible && (
@@ -312,7 +318,8 @@ function TeaProduct() {
                 <span>evergreen@gmail.com</span>
             </div>
 
-            <p className={'text-[15px] flex items-center justify-center relative bottom-[70px] '}>Copyright © 2023 Blog LK</p>
+            <p className={'text-[15px] flex items-center justify-center relative bottom-[70px] '}>Copyright © 2023 Blog
+                LK</p>
         </div>
 
 
