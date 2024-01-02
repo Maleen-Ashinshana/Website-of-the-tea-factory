@@ -1,9 +1,12 @@
 import mainImage from "../assets/images/slide1.1.jpg";
 import logo from '../assets/images/Evergreen_Logo_Primary_Full_4Col.png'
-import greenTea from "../assets/images/collection1.4.jpg";
-import blackTea from "../assets/images/collection1.1-_1_.jpg";
+/*import greenTea from "../assets/images/collection1.4.jpg";
+import blackTea from "../assets/images/collection1.1-_1_.jpg";*/
 import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
+import img from "../assets/images/best-teas-for-weight-loss-hero_source-istock.png";
+import img2 from "../assets/images/Green-tea-extract-improves-gut-health-glucose-levels-1.jpg";
+import img3 from "../assets/images/Screenshot_2023-02-10_at_10.12.58_AM_1000x_crop_center.jpg";
 
 
 // import log from "../assets/images/TSP.png";
@@ -45,34 +48,34 @@ function TeaOrder() {
 
     return <section className={'w-full h-screen'}>
 
-            <nav
-                className={'flex justify-between items-center w-full h-16 font-bold fixed  text-white z-[1000]'}
-                style={navbarStyle}
-            >
-                {/*<img src={logo} className={'w-36 relative '}/>*/}
-                <h1 className={'font-serif text-3xl'}>Evergreen</h1>
-                <ul className={'flex relative right-[10%] text-[20px] gap-[4vw]'}>
-                    <li>Home</li>
-                    <li>
-                        <Link to="/teaProduct">Product</Link>
-                    </li>
-                </ul>
-            </nav>
+        <nav
+            className={'flex justify-between items-center w-full h-16 font-bold fixed  text-white z-[1000]'}
+            style={navbarStyle}
+        >
+            {/*<img src={logo} className={'w-36 relative '}/>*/}
+            <h1 className={'font-serif text-3xl'}>Evergreen</h1>
+            <ul className={'flex relative right-[10%] text-[20px] gap-[4vw]'}>
+                <li>Home</li>
+                <li>
+                    <Link to="/teaProduct">Product</Link>
+                </li>
+            </ul>
+        </nav>
 
 
-            {/*<nav*/}
-            {/*    className={'flex justify-between items-center w-full h-16 font-bold fixed top-0 left-0 right-0 text-white '}*/}
-            {/*    style={navbarStyle}*/}
-            {/*>*/}
-            {/*    /!*<img src={logo} className={'w-36 relative '}/>*!/*/}
-            {/*    <h1 className={'font-serif text-3xl'}>Evergreen</h1>*/}
-            {/*    <ul className={'flex relative right-[10%] text-[20px] gap-[4vw]'}>*/}
-            {/*        <li>Home</li>*/}
-            {/*        <Link to={"/teaProduct"}>*/}
-            {/*            <li>Product</li>*/}
-            {/*        </Link>*/}
-            {/*    </ul>*/}
-            {/*</nav>*/}
+        {/*<nav*/}
+        {/*    className={'flex justify-between items-center w-full h-16 font-bold fixed top-0 left-0 right-0 text-white '}*/}
+        {/*    style={navbarStyle}*/}
+        {/*>*/}
+        {/*    /!*<img src={logo} className={'w-36 relative '}/>*!/*/}
+        {/*    <h1 className={'font-serif text-3xl'}>Evergreen</h1>*/}
+        {/*    <ul className={'flex relative right-[10%] text-[20px] gap-[4vw]'}>*/}
+        {/*        <li>Home</li>*/}
+        {/*        <Link to={"/teaProduct"}>*/}
+        {/*            <li>Product</li>*/}
+        {/*        </Link>*/}
+        {/*    </ul>*/}
+        {/*</nav>*/}
 
 
         <div className={'w-full h-full '}>
@@ -80,22 +83,43 @@ function TeaOrder() {
             <img src={mainImage} className={'w-full h-full'}/>
 
 
-
-
-            <p className={'absolute top-[31%] left-[42.5%]  text-white text-[20px] font-sans '}> HEALTH  BENEFITS OF
+            <p className={'absolute top-[31%] left-[42.5%]  text-white text-[20px] font-sans '}> HEALTH BENEFITS OF
                 TEA</p>
             <p className={'absolute top-[33%] left-[40%] text-white text-[65px] font-serif '}>Evergreen</p>
             <p className={'absolute top-[43%] left-[40.5%] text-white text-[65px] font-serif '}>Sri Lanka</p>
+            <p className={'relative bottom-[45%] text-white font-bold text-[30px] left-[34%]  w-[470px]'}>Sri Lanka's
+                Largest Tea Producer</p>
 
 
-            <button
+            {/* <button
                 className={'w-36 h-10 border-2 border-white absolute bottom-[260px] left-[45%] text-white hover:bg-white hover:text-black'}>SHOP
                 NOW
-            </button>
+            </button>*/}
         </div>
         <div className={'w-full h-screen '}>
 
-            <div className={'w-[60%] h-[45%]  m-[20px] rounded-[10px] hover:shadow-2xl '}>
+
+            <div className={'w-[90%] h-[80%] border-2 border-black relative left-0 right-0 top-[10%] m-auto '}>
+                <div className={'w-[400px] h-[400px] border-2 border-black  absolute left-[5%] top-0 bottom-0 m-auto '}>
+
+                </div>
+                <div className={'w-[60%] h-[60%] border-2 border-blue-500 absolute right-0 top-[7%]'}>
+                    <p className={'text-[20px] font-sans'}>
+                        Being the oldest member of Evergreen tea factories, the Evergreen Tea Factory, has been
+                        gradually evolved into the leading tea factory of the Galle district. Having fully equipped with
+                        modern machinery with a qualified workforce, at present, Evergreen Tea Factory holds about
+                        190,000 kg of made tea production with the capacity of handling 6,300 kg of green leaf per day.
+
+                        Similar to all other low grown producers, Evergreen is famous for its leafy grade teas, which
+                        makes a strong brew, and has a continuous demand mainly from Middle East countries and Russia.
+
+                    </p>
+
+                </div>
+            </div>
+
+
+            {/*<div className={'w-[60%] h-[45%]  m-[20px] rounded-[10px] hover:shadow-2xl '}>
                 <img src={greenTea} className={'w-[400px] h-full relative left-[56%] rounded-r-[10px]'}/>
                 <div className={'w-[56%] h-full bg-[#b7c499]  relative bottom-[100%] rounded-l-[10px]'}>
                     <p className={'text-white font-bold text-[35px] flex items-center justify-center'}>Green Tea</p>
@@ -113,7 +137,7 @@ function TeaOrder() {
                         </button>
                     </div>
 
-                    {/*<img src={greenTea} className={'w-[400px] h-full relative left-[56%] rounded-r-[10px]'}/>*/}
+                    <img src={greenTea} className={'w-[400px] h-full relative left-[56%] rounded-r-[10px]'}/>
                 </div>
             </div>
             <div className={'w-[60%] h-[45%]  m-[20px]  absolute right-0 rounded-[10px] hover:shadow-2xl'}>
@@ -131,10 +155,10 @@ function TeaOrder() {
                         </button>
                     </div>
 
-                    {/*<img src={greenTea} className={'w-[400px] h-full relative left-[56%] rounded-r-[10px]'}/>*/}
+                    <img src={greenTea} className={'w-[400px] h-full relative left-[56%] rounded-r-[10px]'}/>
                 </div>
 
-            </div>
+            </div>*/}
 
         </div>
 
@@ -146,7 +170,8 @@ function TeaOrder() {
                 <span>evergreen@gmail.com</span>
             </div>
 
-            <p className={'text-[15px] flex items-center justify-center relative bottom-[70px]'}>Copyright © 2023 Blog LK</p>
+            <p className={'text-[15px] flex items-center justify-center relative bottom-[70px]'}>Copyright © 2023 Blog
+                LK</p>
         </div>
 
         {/*<div className={'w-full h-full bg-green-600'}>*/}

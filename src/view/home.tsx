@@ -19,7 +19,7 @@ function Home(){
 
         </nav>
         <div className={'w-full h-[91.3%] border-2 border-black bg-green-600 absolute top-16'}>
-        <video src={mainVideo} width={'1500px'} height={'400px'} controls/>
+        <video src={mainVideo} className={'w-[150%] h-[100%]'} controls/>
         </div>
 
 
