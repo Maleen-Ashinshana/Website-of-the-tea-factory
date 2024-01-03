@@ -7,6 +7,7 @@ import {Link} from "react-router-dom";
 import img from "../assets/images/best-teas-for-weight-loss-hero_source-istock.png";
 import img2 from "../assets/images/Green-tea-extract-improves-gut-health-glucose-levels-1.jpg";
 import img3 from "../assets/images/Screenshot_2023-02-10_at_10.12.58_AM_1000x_crop_center.jpg";
+import right from "../assets/images/right (2).png";
 
 
 // import log from "../assets/images/TSP.png";
@@ -97,25 +98,44 @@ function TeaOrder() {
             </button>*/}
         </div>
         <div className={'w-full h-screen '}>
+            <h1 className={'text-[40px]  w-[430px]  relative left-0 right-0 top-5 m-auto italic font-bold'}>Welcome To
+                Evergreen</h1>
 
 
-            <div className={'w-[90%] h-[80%] border-2 border-black relative left-0 right-0 top-[10%] m-auto '}>
+            <div className={'w-[90%] h-[80%] relative left-0 right-0 top-[10%] m-auto mt-[-40px] shadow-2xl'}>
                 <div className={'w-[400px] h-[400px] border-2 border-black  absolute left-[5%] top-0 bottom-0 m-auto '}>
 
                 </div>
-                <div className={'w-[60%] h-[60%] border-2 border-blue-500 absolute right-0 top-[7%]'}>
-                    <p className={'text-[20px] font-sans'}>
-                        Being the oldest member of Evergreen tea factories, the Evergreen Tea Factory, has been
-                        gradually evolved into the leading tea factory of the Galle district. Having fully equipped with
-                        modern machinery with a qualified workforce, at present, Evergreen Tea Factory holds about
-                        190,000 kg of made tea production with the capacity of handling 6,300 kg of green leaf per day.
+                <div className={'w-[60%] h-[70%] {/*border-2 border-blue-500*/} absolute right-0 top-[7%]'}>
+                    <div className={'w-[100%] h-[30%] {/*border-2 border-black*/}'}>
+                        <p className={'text-[18px]'}>
+                            Being the oldest member of Evergreen tea factories, the Evergreen Tea Factory, has been
+                            gradually evolved into the leading tea factory of the Galle district. Having fully equipped
+                            with
+                            modern machinery with a qualified workforce, at present, Evergreen Tea Factory holds about
+                            190,000 kg of made tea production with the capacity of handling 6,300 kg of green leaf per
+                            day.
+                        </p>
+                    </div>
+                    <div className={'w-[100%] h-[20%] {/*border-2 border-orange-500*/}'}>
+                        <p className={'text-[18px]'}>Similar to all other low grown producers, Evergreen is famous for its leafy grade teas, which
+                            makes a strong brew, and has a continuous demand mainly from Middle East countries and
+                            Russia.</p>
+                    </div>
+                    <div className={'w-full h-[40%] {/*border-2 border-green-400*/}'}>
+                        <p className={'text-[18px] '}>
+                            Evergreen Tea Factory is mainly based on bought leaf of smallholders and in turn serves them
+                            with a competitive price, loans for replanting on installment basis pay-backs, fertilizer
+                            issuing on an installment basis pay-backs, good quality tea nursery plants from sister tea
+                            gardens based on an easy pay scheme etc.
+                        </p>
 
-                        Similar to all other low grown producers, Evergreen is famous for its leafy grade teas, which
-                        makes a strong brew, and has a continuous demand mainly from Middle East countries and Russia.
-
-                    </p>
+                    </div>
 
                 </div>
+                <button className={'w-44 h-14 bg-green-600  absolute right-[25%] bottom-20 rounded-[100px] text-white font-bold text-[20px] text-center'}>Learn More
+                    <img src={right} className={'w-[30px]  absolute top-3.5 right-1.5 '}/>
+                </button>
             </div>
 
 
