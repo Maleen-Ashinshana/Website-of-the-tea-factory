@@ -14,6 +14,7 @@ import TeaOrder from "./view/teaOrder.tsx";
 import TeaProduct from "./view/teaProduct.tsx";
 import TeaItem from "./view/teaItem.tsx";
 import Home from "./view/home.tsx";
+import Dashboard from "./view/dashboard.tsx";
 
 
 
@@ -43,6 +44,7 @@ function App() {
             <Route path={"/teaProduct"} element={<TeaProduct/>}></Route>
             <Route path={"/teaItem"} element={<TeaItem/>}></Route>
             <Route path={"/home"} element={<Home/>}></Route>
+            <Route path={"/dash-board"} element={<Dashboard/>}></Route>
 
 
 
