@@ -7,7 +7,6 @@ import Earl_GreyS from "../assets/images/collection1.2.jpg";
 import whiteTea from "../assets/images/White-Tea_1.jpg";
 import green_Tea from "../assets/images/collection1.4.jpg";
 import Matcha from "../assets/images/collection1.5.jpg";
-
 import OlongTea from "../assets/images/collection1.7.jpg";
 import blackPeral from "../assets/images/blackTea/110269-removebg-preview.png";
 import {useEffect, useState} from "react";
