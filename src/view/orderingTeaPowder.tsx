@@ -117,7 +117,7 @@ function OrderingTeaPowder(){
                         <th className={'py-3'}>Date</th>
                         <th className={'py-3'}>Tea Powder Type</th>
                         <th className={'py-3'}>Qty</th>
-                        <th className={'py-3'}>Price</th>
+                        <th className={'py-3'}>Price(Rs.)</th>
                     </tr>
 
                     </thead>

@@ -134,8 +134,8 @@ function UserTeaLeaves() {
                     <tr>
                         <th className={'py-3'}>Date</th>
                         <th className={'py-3'}>Tea Leaves Type</th>
-                        <th className={'py-3'}>Qty</th>
-                        <th className={'py-3'}>Price</th>
+                        <th className={'py-3'}>Qty(kg)</th>
+                        <th className={'py-3'}>Price(RS.)</th>
                     </tr>
 
                     </thead>

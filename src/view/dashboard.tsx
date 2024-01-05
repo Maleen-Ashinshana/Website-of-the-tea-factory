@@ -38,43 +38,43 @@ function Dashboard() {
        labels:['Jun','feb','mar','api','may','jun','jul','aug','sep','otc','nov','dec'],
        datasets:[
            {
-               label:'369',
+               label:'Green Tea ',
                data:[3,6,9],
                backgroundColor:'green',
                boarderColor:'black',
                boarderWidth:1,
            },
            {
-               label:'369',
+               label:'Black Tea',
                data:[3,6,9],
                backgroundColor:'black',
                boarderColor:'black',
                boarderWidth:1,
            },
            {
-               label:'369',
+               label:'White Tea',
                data:[3,6,9],
                backgroundColor:'#cfcfcf',
                boarderColor:'black',
                boarderWidth:1,
            },
            {
-               label:'369',
+               label:'Oloong Tea',
                data:[3,6,9],
                backgroundColor:'orange',
                boarderColor:'black',
                boarderWidth:1,
            },
            {
-               label:'369',
+               label:'Early Tea',
                data:[3,6,9],
                backgroundColor:'#b32222',
                boarderColor:'black',
                boarderWidth:1,
            },
            {
-               label:'369',
-               data:[3,6,9],
+               label:'Matcha Tea',
+               data:[5,10,15],
                backgroundColor:'#98e86e',
                boarderColor:'black',
                boarderWidth:1,
@@ -89,7 +89,7 @@ function Dashboard() {
 
     return <section className={'w-full h-full'}>
         <nav
-            className={'flex justify-between items-center w-[82%] h-16 right-0 font-bold fixed  text-black z-[1000]'}
+            className={'flex justify-between items-center w-[82%] h-16 right-0 font-bold fixed text-black z-[1000]'}
 
         >
             {/*<img src={logo} className={'w-36 relative '}/>*/}
@@ -104,7 +104,7 @@ function Dashboard() {
                 <li><img src={logOut} className={'w-8 relative left-[100px]'}/></li>
             </ul>
         </nav>
-        <div className={'w-[18%] h-screen bg-[#16B757]'}>
+        <div className={'w-[18%] h-screen bg-[#16B757] fixed'}>
             <div className={'w-full h-[8.5%] bg-[#037616]'}>
                 <p className={'text-white font-mono text-[30px] font-bold flex items-center justify-center'}>Admin</p>
             </div>
@@ -156,8 +156,12 @@ function Dashboard() {
                      options={option}/>
             </div>*/}
 
-            <div className={'w-[97%] h-[50%] border-2 border-black absolute right-7 bottom-[20px] bg-white rounded-[10px]'}>
-                <Bar className="border-2 border-blue-500  "
+            <div className={'w-[70%] h-[40%] {/*border-2 border-black*/} absolute left-5 bottom-[20px] bg-white rounded-[10px]'}>
+                <Bar width={820}
+                     height={280}
+
+
+                     className={'w-full h-full'}
                      data={data}
                      options={option}/>
                {/* <div className={'w-full h-[85%] border-2 border-black absolute bottom-0 rounded-[10px]'}>

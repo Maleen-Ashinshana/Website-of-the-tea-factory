@@ -16,6 +16,8 @@ import TeaItem from "./view/teaItem.tsx";
 import Home from "./view/home.tsx";
 import Dashboard from "./view/dashboard.tsx";
 
+import Bar from "./view/bar.tsx";
+
 
 
 
@@ -31,7 +33,9 @@ function App() {
 <div>
     <BrowserRouter>
         <Routes>
-            <Route path={"/"} element={<AdminSingIn/>}></Route>
+            <Route path={"/"} element={<TeaOrder/>}></Route>
+
+            <Route path={"/admin-sing-in"} element={<AdminSingIn/>}></Route>
             <Route path={"/admin-sing-up"} element={<AdminSingUp/>}></Route>
             <Route path={"/user-sing-in"} element={<UserSingIn/>}></Route>
             <Route path={"/user-sing-up"} element={<UserSingUp/>}></Route>
@@ -40,11 +44,12 @@ function App() {
             <Route path={"/user-tea-fertilize"} element={<OrderingTeaFertilizer/>}></Route>
             {/*<Route path={"/fertilize"} element={<Fertilize/>}></Route>*/}
             <Route path={"/fertilizer"} element={<Fertilizer/>}></Route>
-            <Route path={"/tea"} element={<TeaOrder/>}></Route>
-            <Route path={"/teaProduct"} element={<TeaProduct/>}></Route>
             <Route path={"/teaItem"} element={<TeaItem/>}></Route>
+            <Route path={"/teaProduct"} element={<TeaProduct/>}></Route>
+
             <Route path={"/home"} element={<Home/>}></Route>
             <Route path={"/dash-board"} element={<Dashboard/>}></Route>
+            <Route path={"/bar"} element={<Bar/>}></Route>
 
 
 
