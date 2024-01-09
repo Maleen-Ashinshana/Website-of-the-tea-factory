@@ -47,7 +47,6 @@ function App() {
             <Route path={"/teaItem"} element={<TeaItem/>}></Route>
             <Route path={"/teaProduct"} element={<TeaProduct/>}></Route>
 
-            <Route path={"/home"} element={<Home/>}></Route>
             <Route path={"/dash-board"} element={<Dashboard/>}></Route>
             <Route path={"/bar"} element={<Bar/>}></Route>
 
