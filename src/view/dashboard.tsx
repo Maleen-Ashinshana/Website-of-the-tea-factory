@@ -46,6 +46,7 @@ function Dashboard() {
                backgroundColor:'green',
                boarderColor:'black',
                boarderWidth:1,
+               left:'500px'
            },
            {
                label:'Black Tea',
@@ -178,12 +179,45 @@ function Dashboard() {
             <DashBoardCard itemName={'Oloong Tea'} qty={10} imgSrc={OlongTea}/>
             <DashBoardCard itemName={'Early Tea'} qty={10} imgSrc={Earl_GreyS}/>
             <DashBoardCard itemName={'Matcha Tea'} qty={10} imgSrc={Matcha}/>*/}
+            {/*<div className={'w-[95%] h-[13%] bg-white relative top-[10%] left-[40px] rounded-t-[10px]'}>
+                <p className={'flex items-center justify-center text-[30px] font-bold relative top-[20px]'}>Order Chart</p>
 
-            {/*<div>
-                <Bar data={data}
-                     options={option}/>
             </div>*/}
 
+            <div className={'w-[95%] h-[50%] bg-white relative top-[47%] left-[40px] rounded-[10px] shadow-2xl'}>
+                <p className={'flex items-center justify-center text-[30px] font-bold'}>Order Chart</p>
+                <Bar width={1500}
+                     height={390}
+                     data={data}
+                     options={option}
+                     style={{
+                         width:'95%',
+                         height:'30%',
+                         position:'relative',
+                         top:'17px'
+                         /*height:'80px',*/
+
+                     }}
+
+                    /* style={{
+                         backgroundColor: 'lightblue',
+                         margin: '10px',
+                         width:'10%',
+                         height:'44%',
+                         position:'absolute',
+                         left:'38px',
+                         bottom:'0px',
+                         background:'white',
+                         borderRadius:'10px',
+                         boxShadow:'10px',
+
+                         /!* Add more styles as needed *!/
+                     }}*//>
+            </div>
+
+
+            {/*</div>
+*/}
            {/* <div className={'w-[90%] h-[50%]  absolute left-10 bottom-[20px] bg-white rounded-[10px] border-2 border-black'}>*/}
                {/* <Bar width={1000}
                      height={1000}
