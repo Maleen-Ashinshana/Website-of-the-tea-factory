@@ -4,7 +4,7 @@ import greenTea from "../assets/images/collection1.4.jpg";
 import blackTea from "../assets/images/collection1.1-_1_.jpg";
 import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
-import img from "../assets/images/best-teas-for-weight-loss-hero_source-istock.png";
+/*import img from "../assets/images/best-teas-for-weight-loss-hero_source-istock.png";*/
 /*import img2 from "../assets/images/Green-tea-extract-improves-gut-health-glucose-levels-1.jpg";
 import img3 from "../assets/images/Screenshot_2023-02-10_at_10.12.58_AM_1000x_crop_center.jpg";*/
 import right from "../assets/images/right (2).png";
@@ -54,7 +54,7 @@ function TeaOrder() {
         transition: 'background-color 0.3s ease', // Optional: Add a smooth transition effect
     };
 
-    return <section className={'w-full h-screen'}>
+    return <section className={'w-full h-full'}>
 
         <nav
             className={'flex justify-between items-center w-full h-16 font-bold fixed  text-white z-[1000]'}
@@ -88,14 +88,21 @@ function TeaOrder() {
 
         <div className={'w-full h-full '}>
 
-            <img src={mainImage} className={'w-full h-full'}/>
+            <img src={mainImage} className={'w-full h-full xl:w-full md:w-full sm:w-full sm:h-screen '}
 
+            />
+{/*<div className={'w-44 h-24 border-2 border-white flex justify-center items-center absolute bg-black'}>
 
-            <p className={'absolute top-[31%] left-[42.5%]  text-white text-[20px] font-sans '}> HEALTH BENEFITS OF
+</div>*/}
+
+            <p className={'absolute top-[30%] left-[44%]  text-white text-[20px] font-sans lg:text-left  '}> HEALTH BENEFITS OF
                 TEA</p>
-            <p className={'absolute top-[33%] left-[40%] text-white text-[65px] font-serif '}>Evergreen</p>
-            <p className={'absolute top-[43%] left-[40.5%] text-white text-[65px] font-serif '}>Sri Lanka</p>
-            <p className={'relative bottom-[45%] text-white font-bold text-[30px] left-[34%]  w-[470px]'}>Sri Lanka's
+            {/*<p className="absolute text-white text-2xl font-sans lg:top-1/2 lg:left-1/2 lg transform lg:-translate-x-1/2 lg:-translate-y-1/2">
+                HEALTH BENEFITS OF TEA
+            </p>*/}
+            <p className={'absolute top-[33%] left-[40%] text-white text-[75px] font-serif '}>Evergreen</p>
+            <p className={'absolute top-[43%] left-[40.5%] text-white text-[75px] font-serif '}>Sri Lanka</p>
+            <p className={'relative bottom-[43%] text-white font-bold text-[30px] left-[36%]  w-[470px]'}>Sri Lanka's
                 Largest Tea Producer</p>
 
 
