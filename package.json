@@ -12,6 +12,7 @@
   "dependencies": {
     "@stripe/react-stripe-js": "^2.4.0",
     "@stripe/stripe-js": "^2.2.2",
+    "axios": "^1.6.5",
     "chart.js": "^4.4.1",
     "express": "^4.18.2",
     "react": "^18.2.0",
@@ -22,7 +23,8 @@
     "react-router-dom": "^6.21.1",
     "react-stripe-checkout": "^2.6.3",
     "recharts": "^2.10.3",
-    "stripe": "^14.10.0"
+    "stripe": "^14.10.0",
+    "sweetalert2": "^11.10.3"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",

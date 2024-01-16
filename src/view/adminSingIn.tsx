@@ -30,7 +30,7 @@ function AdminSingIn() {
                     <option>Galle</option>
                 </select>
 
-                <Input type={'username'} name={'username'} label={'username'} placeholder={''}/>
+                <Input type={'username'} name={'username'} label={'username'} placeholder={''} />
                 <Input type={'password'} name={'password'} placeholder={''} label={'password'}/>
                 <button className="min-btn relative left-[37%]  top-[2%]">Sing In</button>
                 <span className={'relative left-[100px] top-[30px]'}>Don You Have An Account ?
