@@ -61,7 +61,13 @@ function TeaOrder() {
             style={navbarStyle}
         >
             {/*<img src={logo} className={'w-36 relative '}/>*/}
-            <h1 className={'font-serif text-3xl'}>Evergreen</h1>
+
+            <h1 className={'font-serif text-2xl p-7'}>
+                <Link to={'/admin-sing-in'}>
+                    Admin
+                </Link>
+
+            </h1>
             <ul className={'flex relative right-[10%] text-[20px] gap-[4vw]'}>
                 <li>Home</li>
                 <li>
@@ -102,7 +108,7 @@ function TeaOrder() {
             </p>*/}
             <p className={'absolute top-[33%] left-[40%] text-white text-[75px] font-serif '}>Evergreen</p>
             <p className={'absolute top-[43%] left-[40.5%] text-white text-[75px] font-serif '}>Sri Lanka</p>
-            <p className={'relative bottom-[43%] text-white font-bold text-[30px] left-[36%]  w-[470px]'}>Sri Lanka's
+            <p className={'absolute bottom-[38%] text-white font-bold text-[30px] left-[36%]  w-[470px]'}>Sri Lanka's
                 Largest Tea Producer</p>
 
 
