@@ -4,9 +4,67 @@ import {Link} from "react-router-dom";
 import usernameIMG from "../assets/images/download__13_-removebg-preview.png";
 import passwordIMG from "../assets/images/download__14_-removebg-preview.png";
 import adminImg from "../assets/images/businessman_6997519-removebg-preview.png";
+import axios from "axios";
+import Swal from "sweetalert2";
+import {useNavigate} from "react-router-dom";
+import Cookies from "js-cookie";
+import {useState} from "react";
+import * as validator from "../util/validator";
 
-function AdminSingIn() {
 
+
+
+function AdminSingIn():JSX.Element {
+
+    const navigate=useNavigate();
+
+    const [username,setUserName]=useState('');
+    const [password,setPassword]=useState('');
+    const [errorMsg,setErrorMsg]=useState('');
+
+    const handleInput=(e,type):void =>{
+        switch (type){
+            case 'username':
+                setUserName(e.target.value);
+                break;
+            case 'password':
+                setPassword(e.target.value);
+                break
+        }
+    }
+    const handleLogin=():void=>{
+        let isValidInput=true;
+        let errorMsg="";
+
+        if (!validator.validUsername(username)){
+            isValidInput=false;
+            errorMsg="> Invalid User Name";
+        }
+        if (!validator.validatePassword(password)){
+            isValidInput=false;
+            errorMsg=errorMsg + ">Invalid Password";
+        }
+        if (isValidInput){
+            const header={'Content-Type': 'application/json'}
+            let body={
+                username:username,
+                password:password
+            }
+            axios.post("http://localhost:8080/admin/auth",body,{headers:header}).then(r=>{
+                Cookies.set("token",r.data.data.access_token);
+                Cookies.set("user",JSON.stringify(r.data.data.user));
+                navigate("/dash-board");
+            }).catch(e=>{
+                Swal.fire({
+                    icon: "error",
+                    title: "Sorry!",
+                    text: "Something went wrong"
+                });
+            })
+        }else {
+            setErrorMsg(errorMsg);
+        }
+    }
     return <section className={'bg-gray-200 w-full h-screen'}>
         <div className={' w-[20%] h-[10%] absolute left-0 right-0 m-auto mt-5'}>
             <img src={logo} className={'w-full h-full'} title="logo" alt="logo"/>
@@ -54,13 +112,19 @@ function AdminSingIn() {
 <img src={usernameIMG} className={'w-8 relative top-[31.5%] left-[5%] '}/>
 <img src={passwordIMG} className={'w-8 relative top-[40%] left-[5%]'}/>
                 <div className={'w-[80%] h-40 absolute left-0 right-0  top-[45%] m-auto'}>
-                    <Input type={'username'} name={'username'} label={'username'} placeholder={''} />
-                    <Input type={'password'} name={'password'} placeholder={''} label={'password'}/>
+                    <Input type={'username'} name={'username'} label={'username'} placeholder={''} callBack={handleInput} />
+                    <Input type={'password'} name={'password'} placeholder={''} label={'password'} callBack={handleInput}/>
                 </div>
                 {/*<Input type={'username'} name={'username'} label={'username'} placeholder={''} />
                 <Input type={'password'} name={'password'} placeholder={''} label={'password'}/>*/}
-                <button className="min-btn absolute left-[37%]  bottom-[15%]">Sing In</button>
-                <span className={'absolute left-[100px] bottom-[40px]'}>Don You Have An Account ?
+                <button className="min-btn absolute left-[37%]  bottom-[11%]" onClick={handleLogin}>Sing In</button>
+                {
+                    errorMsg &&
+                    <div className={'bg-red-100 text-center p-2 m-2 absolute bottom-[18%] left-[0%] w-full'}>
+                        { errorMsg }
+                    </div>
+                }
+                <span className={'absolute left-[100px] bottom-[20px]'}>Don You Have An Account ?
                     <Link to={"/admin-sing-up"}>
                             <span className={'absolute right-[-32%] top-0 text-blue-700'}>Sing Up</span>
                     </Link>

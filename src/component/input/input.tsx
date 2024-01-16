@@ -4,6 +4,7 @@ interface Props{
     placeholder ? :string,
     label ?:string,
     className ?: string
+    callBack:Function
 }
 function Input(props: Props) {
     return<div className={''}>
@@ -19,7 +20,8 @@ function Input(props: Props) {
              focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border
              placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border focus:border-2 border-t-transparent
              focus:border-t-transparent text-sm mt-[30px] mb-[-30px] rounded-[7px] border-blue-gray-200 focus:border-gray-500 flex flex-col left-0 right-0 top-0 bottom-0 m-auto"
-             /><label
+        onChange={e=>props.callBack(e,props.name)}
+        /><label
         htmlFor={props.name}
         className=" flex w-80 h-9  select-none pointer-events-none relative  left-[0px] font-normal !overflow-visible truncate peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent
         peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all  -top-[12px]  peer-placeholder-shown:text-sm text-[11px] peer-focus:text-[11px] before:content[' '] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1
