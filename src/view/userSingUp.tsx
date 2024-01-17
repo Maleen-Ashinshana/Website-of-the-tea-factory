@@ -51,16 +51,16 @@ function UserSingUp(): JSX.Element {
     }
     /*const handleSelector = (e: any, type: string) => {
         switch (type) {
-            case 'usertype':
+            case 'type':
                 setUserType(e.target.value);
                 break;
-            case 'userBranch':
+            case 'branch':
                 setBranch(e.target.value);
                 break;
         }
     }*/
-    /*const saveValidate = () => {
-        if (username && usertype && userBranch && contact_number1 && contact_number2 && useremail && password) {
+    const saveValidate = () => {
+        if (username && usertype && branch && contact_number1 && contact_number2 && email && password) {
             createAccount();
         } else {
             Swal.fire({
@@ -69,7 +69,7 @@ function UserSingUp(): JSX.Element {
                 text: "Please enter valid inputs"
             });
         }
-    }*/
+    }
     const createAccount = () => {
         const headers = {'Content-Type': 'application/json'}
         let body = {
@@ -123,12 +123,12 @@ function UserSingUp(): JSX.Element {
                     <Input type={'name'} name={'name'} placeholder={''} label={'Name'} callBack={handleInput}/>
                     <Input type={'type'} name={'type'} placeholder={''} label={'Type'} callBack={handleInput}/>
                     <Input type={'branch'} name={'branch'} placeholder={''} label={'Branch'} callBack={handleInput}/>
-                    {/* <select className={' outline-none w-80 h-9 mt-[30px] relative left-[20%] bg-gray-200 rounded-[7px]'} onChange={(e) => handleSelector(e, 'usertype')}
+                   {/*  <select className={' outline-none w-80 h-9 mt-[30px] relative left-[20%] bg-gray-200 rounded-[7px]'} onChange={(e) => handleSelector(e, 'type')}
                             id={'type'}>
                         <option disabled>Select The Type</option>
                         <option>Galle</option>
                     </select>
-                    <select className={' outline-none w-80 h-9 mt-[30px] relative left-[20%] bg-gray-200 rounded-[7px]'} onChange={(e) => handleSelector(e, 'userBranch')}
+                    <select className={' outline-none w-80 h-9 mt-[30px] relative left-[20%] bg-gray-200 rounded-[7px]'} onChange={(e) => handleSelector(e, 'branch')}
                             id={'branch'}>
                         <option disabled>Select The Branch</option>
                         <option>Galle</option>
@@ -157,7 +157,7 @@ function UserSingUp(): JSX.Element {
                 <Input type={'contact1'} name={'contact1'} placeholder={''} label={'contact number 1'}/>
                 <Input type={'contact2'} name={'contact2'} placeholder={''} label={'contact number 2'}/>*/}
                 {/*<Link to={"/user-sing-in"}>*/}
-                <button className={'min-btn absolute left-0 right-0 m-auto'} onClick={createAccount}>Sing Up</button>
+                <button className={'min-btn absolute left-0 right-0 m-auto'} onClick={saveValidate}>Sing Up</button>
                 {/*  </Link>*/}
 
 
