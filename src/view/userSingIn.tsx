@@ -13,16 +13,16 @@ function UserSingIn() {
             <div className={'w-[50%]  h-[80%] bg-gray-600 relative left-[20px] top-[50px] rounded-[7px]'}>
                 <img src={main} className={'w-screen h-full '}/>
             </div>
-            <div className={' w-[48%] h-full absolute right-0 top-0'}>
+            <div className={' w-[48%] h-full absolute right-0 top-0 '}>
                 <p className={' text-gray-500 text-center relative top-[80px] font-bold font-mono text-[40px]'}>Sing
                     In</p>
                 <div className={'w-full h-[40%] relative top-[20%]'}>
                     <Input type={'username'} name={'username'} placeholder={''} label={'username'}/>
                     <Input type={'password'} name={'register number'} placeholder={''} label={'register number'}/>
                     {/*<button className={'min-btn left-[35%]'}>Sing In</button>*/}
-                    <Link to={"/user-tea-leaves"}>
+                    {/*<Link to={"/user-tea-leaves"}>*/}
                         <button className={'min-btn left-[35%]'}>Sing In</button>
-                    </Link>
+                   {/* </Link>*/}
 
                 </div>
                 <span className={'absolute bottom-[15%] left-[15%]'}>Don You Have An Account?

@@ -15,6 +15,7 @@ import fax from "../assets/images/fax.png";
 import ins from "../assets/images/instagram (1).png";
 import address from "../assets/images/pin.png";
 import phone from "../assets/images/telephone.png";
+import ac from "../assets/images/ac.png";
 
 
 // import log from "../assets/images/TSP.png";
@@ -72,6 +73,12 @@ function TeaOrder() {
                 <li>Home</li>
                 <li>
                     <Link to="/teaProduct">Product</Link>
+                </li>
+                <li>
+                    <Link to={'/user-sing-in'}>
+                        <img src={ac} className={'w-10'}/>
+                    </Link>
+
                 </li>
             </ul>
         </nav>

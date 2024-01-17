@@ -1,7 +1,4 @@
 // TeaItem.tsx
-
-
-
 import {Link} from "react-router-dom";
 import searchIcon from "../assets/images/magnifying-glass.png";
 import { FaPen, FaTrash } from "react-icons/fa";
