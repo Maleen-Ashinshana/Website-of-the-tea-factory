@@ -18,14 +18,6 @@ import phone from "../assets/images/telephone.png";
 import ac from "../assets/images/ac.png";
 
 
-// import log from "../assets/images/TSP.png";
-//
-// const button=document.querySelector('button');
-// // button.addEventListener('click', () => {
-// //     // logic here
-// //     return<img src={log}/>
-// // })
-
 function TeaOrder() {
 
 
@@ -55,6 +47,7 @@ function TeaOrder() {
         transition: 'background-color 0.3s ease', // Optional: Add a smooth transition effect
     };
 
+
     return <section className={'w-full h-full'}>
 
         <nav
@@ -74,45 +67,25 @@ function TeaOrder() {
                 <li>
                     <Link to="/teaProduct">Product</Link>
                 </li>
+                <li  className="cursor-pointer">Register</li>
                 <li>
                     <Link to={'/user-sing-in'}>
                         <img src={ac} className={'w-10'}/>
                     </Link>
-
                 </li>
+
             </ul>
         </nav>
-
-
-        {/*<nav*/}
-        {/*    className={'flex justify-between items-center w-full h-16 font-bold fixed top-0 left-0 right-0 text-white '}*/}
-        {/*    style={navbarStyle}*/}
-        {/*>*/}
-        {/*    /!*<img src={logo} className={'w-36 relative '}/>*!/*/}
-        {/*    <h1 className={'font-serif text-3xl'}>Evergreen</h1>*/}
-        {/*    <ul className={'flex relative right-[10%] text-[20px] gap-[4vw]'}>*/}
-        {/*        <li>Home</li>*/}
-        {/*        <Link to={"/teaProduct"}>*/}
-        {/*            <li>Product</li>*/}
-        {/*        </Link>*/}
-        {/*    </ul>*/}
-        {/*</nav>*/}
-
 
         <div className={'w-full h-full '}>
 
             <img src={mainImage} className={'w-full h-full xl:w-full md:w-full sm:w-full sm:h-screen '}
 
             />
-{/*<div className={'w-44 h-24 border-2 border-white flex justify-center items-center absolute bg-black'}>
-
-</div>*/}
 
             <p className={'absolute top-[30%] left-[44%]  text-white text-[20px] font-sans lg:text-left  '}> HEALTH BENEFITS OF
                 TEA</p>
-            {/*<p className="absolute text-white text-2xl font-sans lg:top-1/2 lg:left-1/2 lg transform lg:-translate-x-1/2 lg:-translate-y-1/2">
-                HEALTH BENEFITS OF TEA
-            </p>*/}
+
             <p className={'absolute top-[33%] left-[40%] text-white text-[75px] font-serif '}>Evergreen</p>
             <p className={'absolute top-[43%] left-[40.5%] text-white text-[75px] font-serif '}>Sri Lanka</p>
             <p className={'absolute bottom-[38%] text-white font-bold text-[30px] left-[36%]  w-[470px]'}>Sri Lanka's
@@ -123,6 +96,10 @@ function TeaOrder() {
                 className={'w-36 h-10 border-2 border-white absolute bottom-[260px] left-[45%] text-white hover:bg-white hover:text-black'}>SHOP
                 NOW
             </button>*/}
+           {/* <button className="w-44 h-14 bg-gradient-to-r from-[#19ce47] to-[#116a29] fixed right-[5%] bottom-[5%] text-white text-[20px] rounded-[30px] z-[1000] hover:bg-transparent hover:text-black hover:border-[1px] border-black">
+                Register
+            </button>*/}
+
         </div>
         <div className={'w-full h-screen '}>
             <h1 className={'text-[40px]  w-[430px]  relative left-0 right-0 top-5 m-auto italic font-bold'}>Welcome To

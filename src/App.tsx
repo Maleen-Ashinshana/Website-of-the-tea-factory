@@ -17,6 +17,8 @@ import Home from "./view/home.tsx";
 import Dashboard from "./view/dashboard.tsx";
 
 import Bar from "./view/bar.tsx";
+import React from "react";
+import Register from "./view/register.tsx";
 
 
 
@@ -49,6 +51,7 @@ function App() {
 
             <Route path={"/dash-board"} element={<Dashboard/>}></Route>
             <Route path={"/bar"} element={<Bar/>}></Route>
+            <Route path={"/re"} element={<Register/>}></Route>
 
 
 
