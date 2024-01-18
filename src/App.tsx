@@ -51,7 +51,7 @@ function App() {
 
             <Route path={"/dash-board"} element={<Dashboard/>}></Route>
             <Route path={"/bar"} element={<Bar/>}></Route>
-            <Route path={"/re"} element={<Register/>}></Route>
+            <Route path={"/register"} element={<Register/>}></Route>
 
 
 

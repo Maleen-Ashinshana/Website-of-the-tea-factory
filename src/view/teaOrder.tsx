@@ -67,7 +67,10 @@ function TeaOrder() {
                 <li>
                     <Link to="/teaProduct">Product</Link>
                 </li>
-                <li  className="cursor-pointer">Register</li>
+                <Link to={'/register'}>
+                    <li  className="cursor-pointer">Register</li>
+                </Link>
+
                 <li>
                     <Link to={'/user-sing-in'}>
                         <img src={ac} className={'w-10'}/>

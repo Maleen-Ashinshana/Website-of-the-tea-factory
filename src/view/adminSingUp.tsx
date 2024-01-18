@@ -26,10 +26,10 @@ function AdminSingUp(): JSX.Element {
                 break;
         }
     }
-    const saveValidate=()=>{
-        if (username && email && password){
+    const saveValidate = () => {
+        if (username && email && password) {
             createAdmin();
-        }else {
+        } else {
             Swal.fire({
                 icon: "error",
                 title: "Invalid Inputs",
@@ -38,13 +38,13 @@ function AdminSingUp(): JSX.Element {
         }
     }
 
-    const createAdmin=()=>{
-        const headers={'Content-Type': 'application/json'}
+    const createAdmin = () => {
+        const headers = {'Content-Type': 'application/json'}
 
-        let body={
-            username:username,
-            email:email,
-            password:password
+        let body = {
+            username: username,
+            email: email,
+            password: password
         }
         console.log(body)
         axios.post("http://localhost:8080/admin", body, {headers: headers}).then(r => {
@@ -60,7 +60,7 @@ function AdminSingUp(): JSX.Element {
                 text: "Something went wrong"
             });
         })
-        }
+    }
 
 
     return <section className={'bg-gray-200 w-full h-screen'}>
@@ -73,11 +73,13 @@ function AdminSingUp(): JSX.Element {
                          name={'username'}
                          label={'username : '} callback={handleInput}
                          placeholder={'Enter Your User Name'}
-                         className={'bg-gray-200  w-80 h-10 relative left-[35%] mt-[30px] top-[70px] rounded-[3px] outline-none border focus:border-gray-500'} />
+                         className={'bg-gray-200  w-80 h-10 relative left-[35%] mt-[30px] top-[70px] rounded-[3px] outline-none border focus:border-gray-500'}/>
             <CustomInput type={'email'} name={'email'} label={'email : '} placeholder={'Enter Your Email'}
-                         className={'bg-gray-200  w-80 h-10 flex  relative left-[35%] mt-[30px] top-[70px] rounded-[3px] outline-none border focus:border-gray-500'} callback={handleInput}/>
+                         className={'bg-gray-200  w-80 h-10 flex  relative left-[35%] mt-[30px] top-[70px] rounded-[3px] outline-none border focus:border-gray-500'}
+                         callback={handleInput}/>
             <CustomInput type={'password'} name={'password'} label={'password : '} placeholder={'Enter Your Password'}
-                         className={'bg-gray-200  w-80 h-10 flex   relative left-[35%] mt-[30px] top-[70px] rounded-[3px] outline-none border focus:border-gray-500'} callback={handleInput}/>
+                         className={'bg-gray-200  w-80 h-10 flex   relative left-[35%] mt-[30px] top-[70px] rounded-[3px] outline-none border focus:border-gray-500'}
+                         callback={handleInput}/>
 
             <button className={'min-btn  left-[43%] top-[20%]'} onClick={saveValidate}>Sing Up</button>
         </div>
