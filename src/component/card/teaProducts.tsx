@@ -24,7 +24,7 @@ function TeaProducts(props: Props) {
             title: props.title,
             price: props.price,
         });
-        return <TeaItem image={props.image} title={props.title} price={props.price} />;
+        return <TeaItem image={"data:image.jpeg/base64,/9j/"+props.image} title={props.title} price={props.price} />;
     };
 
 
@@ -33,7 +33,7 @@ function TeaProducts(props: Props) {
             <div className={'w-[280px] h-[300px] mt-5 ml-5 inline-block hover:shadow-2xl'}>
                 <div className={'w-full h-[80%] bg-gray-200'}>
                     <div className={'w-[80%] h-[80%] relative left-0 right-0 top-[20px] bottom-0 m-auto'}>
-                        <img src={props.image} className={'w-full h-full '} onClick={handleClick} />
+                        <img src={"data:image/jpeg;base64,"+props.image} className={'w-full h-full '} onClick={handleClick} />
                     </div>
                 </div>
                 <p className={'font-bold flex items-center justify-center text-[18px]'}>{props.title}</p>

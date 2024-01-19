@@ -23,13 +23,19 @@ import {
     Legend
 } from "chart.js";
 import {Bar} from "react-chartjs-2";
+import React, {useEffect, useState} from "react";
+import TeaProducts from "../component/card/teaProducts.tsx";
+import blackPeral from "../assets/images/blackTea/110269-removebg-preview.png";
+
 /*import _default from "chart.js/dist/plugins/plugin.legend";*/
 
 /*import defaultCallbacks from "chart.js/dist/plugins/plugin.tooltip";*/
 
 
-
 function Dashboard() {
+    useEffect(() => {
+        setItems(false);
+    }, []);
     ChartJs.register(
         BarElement,
         CategoryScale,
@@ -37,66 +43,71 @@ function Dashboard() {
         Tooltip,
         Legend
     )
-   const data={
-       labels:['Jun','feb','mar','api','may','jun','jul','aug','sep','otc','nov','dec'],
-       datasets:[
-           {
-               label:'Green Tea ',
-               data:[3,6,9],
-               backgroundColor:'green',
-               boarderColor:'black',
-               boarderWidth:1,
-               left:'500px'
-           },
-           {
-               label:'Black Tea',
-               data:[3,6,9],
-               backgroundColor:'black',
-               boarderColor:'black',
-               boarderWidth:1,
-           },
-           {
-               label:'White Tea',
-               data:[3,6,9],
-               backgroundColor:'#cfcfcf',
-               boarderColor:'black',
-               boarderWidth:1,
-           },
-           {
-               label:'Oloong Tea',
-               data:[3,6,9],
-               backgroundColor:'orange',
-               boarderColor:'black',
-               boarderWidth:1,
-           },
-           {
-               label:'Early Tea',
-               data:[3,6,9],
-               backgroundColor:'#b32222',
-               boarderColor:'black',
-               boarderWidth:1,
-           },
-           {
-               label:'Matcha Tea',
-               data:[5,10,15],
-               backgroundColor:'#98e86e',
-               boarderColor:'black',
-               boarderWidth:1,
-           }
+    const data = {
+        labels: ['Jun', 'feb', 'mar', 'api', 'may', 'jun', 'jul', 'aug', 'sep', 'otc', 'nov', 'dec'],
+        datasets: [
+            {
+                label: 'Green Tea ',
+                data: [3, 6, 9],
+                backgroundColor: 'green',
+                boarderColor: 'black',
+                boarderWidth: 1,
+                left: '500px'
+            },
+            {
+                label: 'Black Tea',
+                data: [3, 6, 9],
+                backgroundColor: 'black',
+                boarderColor: 'black',
+                boarderWidth: 1,
+            },
+            {
+                label: 'White Tea',
+                data: [3, 6, 9],
+                backgroundColor: '#cfcfcf',
+                boarderColor: 'black',
+                boarderWidth: 1,
+            },
+            {
+                label: 'Oloong Tea',
+                data: [3, 6, 9],
+                backgroundColor: 'orange',
+                boarderColor: 'black',
+                boarderWidth: 1,
+            },
+            {
+                label: 'Early Tea',
+                data: [3, 6, 9],
+                backgroundColor: '#b32222',
+                boarderColor: 'black',
+                boarderWidth: 1,
+            },
+            {
+                label: 'Matcha Tea',
+                data: [5, 10, 15],
+                backgroundColor: '#98e86e',
+                boarderColor: 'black',
+                boarderWidth: 1,
+            }
 
-       ]
-   }
-   const  option={
-
-   }
-
+        ]
+    }
+    const option = {}
+    const [showItems, setItems] = useState(true);
+    const handleItemsDiv = () => {
+        setItems(true);
+    }
+    const handleDashBoard=()=>{
+        setItems(false);
+    }
 
     return <section className={'w-full h-full'}>
         <div className={'w-full h-14 bg-white'}>
-            <p className={'flex items-center justify-center font-bold text-[30px] relative top-[8px] '}>Admin Dash Board</p>
+            <p className={'flex items-center justify-center font-bold text-[30px] relative top-[8px] '}>Admin Dash
+                Board</p>
 
         </div>
-       {/* <nav
+        {/* <nav
             className={'flex justify-between items-center w-[82%] h-16 right-0 font-bold fixed text-black z-[1000]'}
 
         >
@@ -113,14 +124,14 @@ function Dashboard() {
             </ul>
         </nav>*/}
         <div className={'w-[18%] h-screen bg-[#16B757] fixed'}>
-           {/* <div className={'w-full h-[8.5%] bg-[#037616]'}>
+            {/* <div className={'w-full h-[8.5%] bg-[#037616]'}>
                 <p className={'text-white font-mono text-[30px] font-bold flex items-center justify-center'}>Admin</p>
             </div>*/}
             <div className={'w-full h-[7%] {/*border-2 border-black*/} mt-3 hover:bg-[#20c763] '}>
                 <div className={'w-[25%] h-full {/*border-2 border-blue-500*/} ml-2'}>
                     <img src={dashBoard} className={'w-12 relative left-[10%]'}/>
                 </div>
-                <p className={'relative bottom-[82%] left-[35%] text-white text-[20px] '}>Dash Board</p>
+                <p className={'relative bottom-[82%] left-[35%] text-white text-[20px] '}onClick={handleDashBoard}>Dash Board</p>
             </div>
             <div className={'w-full h-[7%] {/*border-2 border-black*/} mt-3 hover:bg-[#20c763] '}>
                 <div className={'w-[25%] h-full {/*border-2 border-blue-500*/} ml-2'}>
@@ -134,11 +145,13 @@ function Dashboard() {
                 </div>
                 <p className={'relative bottom-[82%] left-[35%] text-white text-[20px] '}>Tea Fertilizer</p>
             </div>
+
             <div className={'w-full h-[7%] {/*border-2 border-black*/} mt-3 hover:bg-[#20c763] '}>
                 <div className={'w-[25%] h-full {/*border-2 border-blue-500*/} ml-2'}>
                     <img src={teaItem} className={'w-12 relative left-[10%]'}/>
                 </div>
-                <p className={'relative bottom-[82%] left-[35%] text-white text-[20px] '}>Tea Item</p>
+                <p className={'relative bottom-[82%] left-[35%] text-white text-[20px] '} onClick={handleItemsDiv}>Tea
+                    Item</p>
             </div>
             <div className={'w-full h-[7%] mt-3 hover:bg-[#20c763] absolute bottom-[8%]'}>
                 <div>
@@ -147,8 +160,6 @@ function Dashboard() {
                 <p className={'relative bottom-[30%] left-[30%] text-black text-[20px] '}>Log Out</p>
 
             </div>
-            {/*<li className={'relative left-[130px]'}>log out</li>
-            <li><img src={logOut} className={'w-8 relative left-[100px]'}/></li>*/}
         </div>
         <div className={'w-[82%] h-[92%] bg-[#f0f0f0] absolute right-0 top-[8%]'}>
 
@@ -164,7 +175,8 @@ function Dashboard() {
                 <p className={'text-[18px] absolute left-[130px] top-[20%] text-gray-400'}>Orders</p>
                 <label className={'font-bold text-[28px] absolute right-[120px] bottom-[40px]'}>1,000</label>
             </div>
-            <div className={'bg-white w-[25%] h-[20%] absolute top-[15%] left-[30%] ml-10 rounded-[10px] shadow-2xl inline-block'}>
+            <div
+                className={'bg-white w-[25%] h-[20%] absolute top-[15%] left-[30%] ml-10 rounded-[10px] shadow-2xl inline-block'}>
                 <img src={customer} className={'w-16 absolute left-5 top-0 bottom-0 m-auto '}/>
                 <p className={'text-[18px] absolute left-[130px] top-[20%] text-gray-400'}>Customers</p>
                 <label className={'font-bold text-[28px] absolute right-[120px] bottom-[40px]'}>1,000</label>
@@ -177,7 +189,7 @@ function Dashboard() {
             {/*       <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-green-500">
   Your text goes here
 </span>*/}
-          {/*  <DashBoardCard itemName={'Green Tea'} qty={10} imgSrc={green_Tea}/>
+            {/*  <DashBoardCard itemName={'Green Tea'} qty={10} imgSrc={green_Tea}/>
             <DashBoardCard itemName={'Black Tea'} qty={10} imgSrc={all}/>
             <DashBoardCard itemName={'White Tea'} qty={10} imgSrc={whiteTea}/>
             <DashBoardCard itemName={'Oloong Tea'} qty={10} imgSrc={OlongTea}/>
@@ -195,14 +207,32 @@ function Dashboard() {
                      data={data}
                      options={option}
                      style={{
-                         width:'95%',
-                         height:'30%',
-                         position:'relative',
-                         top:'5px'
+                         width: '95%',
+                         height: '30%',
+                         position: 'relative',
+                         top: '5px'
                      }}
-                   />
+                />
             </div>
         </div>
+        {showItems && (
+            <div className={'w-full h-screen bg-white absolute top-[94.5%]'} id={'earlDiv'}>
+                <h1 className={'flex items-center justify-center relative top-0 text-[25px]'}>Earl Gayes Tea</h1>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+
+
+            </div>
+        )}
+
+
     </section>
 }
 

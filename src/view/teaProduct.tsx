@@ -240,7 +240,7 @@ function TeaProduct() {
                     }*/}
                 <div style={{ display: 'flex', flexWrap: 'wrap' }}>
                     {data.map((r:Data,index:number) => (
-                        <Card key={r.type}   price={r.price} title={r.item_name}/>
+                        <Card key={r.type}   price={r.price} title={r.item_name} image={r.img} />
                     ))}
                 </div>
 

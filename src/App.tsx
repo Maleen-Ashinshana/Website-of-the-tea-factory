@@ -20,6 +20,7 @@ import Bar from "./view/bar.tsx";
 import React from "react";
 import Register from "./view/register.tsx";
 import Te from "./view/te.tsx";
+import AddItem from "./view/addItem.tsx";
 
 
 
@@ -36,7 +37,7 @@ function App() {
 <div>
     <BrowserRouter>
         <Routes>
-            <Route path={"/"} element={<TeaOrder/>}></Route>
+            <Route path={"/"} element={<Te/>}></Route>
 
             <Route path={"/admin-sing-in"} element={<AdminSingIn/>}></Route>
             <Route path={"/admin-sing-up"} element={<AdminSingUp/>}></Route>
@@ -53,6 +54,7 @@ function App() {
             <Route path={"/dash-board"} element={<Dashboard/>}></Route>
             <Route path={"/bar"} element={<Bar/>}></Route>
             <Route path={"/register"} element={<Register/>}></Route>
+            <Route path={"/add_item"} element={<AddItem/>}></Route>
 
 
 
