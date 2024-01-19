@@ -6,6 +6,8 @@ import teaItem from "../assets/images/download__11_-removebg-preview (1).png";
 import orderIcon from "../assets/images/shopping-bag.png";
 import customer from "../assets/images/download__5_-removebg-preview.png";
 import owner from "../assets/images/download__11_-removebg-preview.png";
+import CustomInput from "../component/input/customInput.tsx";
+import IMG from "../component/test";
 /*import Earl_GreyS from "../assets/images/collection1.2.jpg";
 import whiteTea from "../assets/images/White-Tea_1.jpg";
 import green_Tea from "../assets/images/collection1.4.jpg";
@@ -127,11 +129,11 @@ function Dashboard() {
             {/* <div className={'w-full h-[8.5%] bg-[#037616]'}>
                 <p className={'text-white font-mono text-[30px] font-bold flex items-center justify-center'}>Admin</p>
             </div>*/}
-            <div className={'w-full h-[7%] {/*border-2 border-black*/} mt-3 hover:bg-[#20c763] '}>
+            <div className={'w-full h-[7%] {/*border-2 border-black*/} mt-3 hover:bg-[#20c763] '} onClick={handleDashBoard}>
                 <div className={'w-[25%] h-full {/*border-2 border-blue-500*/} ml-2'}>
                     <img src={dashBoard} className={'w-12 relative left-[10%]'}/>
                 </div>
-                <p className={'relative bottom-[82%] left-[35%] text-white text-[20px] '}onClick={handleDashBoard}>Dash Board</p>
+                <p className={'relative bottom-[82%] left-[35%] text-white text-[20px] '}>Dash Board</p>
             </div>
             <div className={'w-full h-[7%] {/*border-2 border-black*/} mt-3 hover:bg-[#20c763] '}>
                 <div className={'w-[25%] h-full {/*border-2 border-blue-500*/} ml-2'}>
@@ -146,11 +148,11 @@ function Dashboard() {
                 <p className={'relative bottom-[82%] left-[35%] text-white text-[20px] '}>Tea Fertilizer</p>
             </div>
 
-            <div className={'w-full h-[7%] {/*border-2 border-black*/} mt-3 hover:bg-[#20c763] '}>
+            <div className={'w-full h-[7%] {/*border-2 border-black*/} mt-3 hover:bg-[#20c763] '} onClick={handleItemsDiv}>
                 <div className={'w-[25%] h-full {/*border-2 border-blue-500*/} ml-2'}>
                     <img src={teaItem} className={'w-12 relative left-[10%]'}/>
                 </div>
-                <p className={'relative bottom-[82%] left-[35%] text-white text-[20px] '} onClick={handleItemsDiv}>Tea
+                <p className={'relative bottom-[82%] left-[35%] text-white text-[20px] '} >Tea
                     Item</p>
             </div>
             <div className={'w-full h-[7%] mt-3 hover:bg-[#20c763] absolute bottom-[8%]'}>
@@ -216,17 +218,32 @@ function Dashboard() {
             </div>
         </div>
         {showItems && (
-            <div className={'w-full h-screen bg-white absolute top-[94.5%]'} id={'earlDiv'}>
-                <h1 className={'flex items-center justify-center relative top-0 text-[25px]'}>Earl Gayes Tea</h1>
-                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
-                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
-                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
-                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
-                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
-                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
-                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
-                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
-                <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>
+            <div className={'w-[82%] h-[92.5%] bg-[#f0f0f0] absolute right-0 top-[56px]'} >
+                <div className={'w-[90%] h-[55%] bg-white absolute left-0 right-0 bottom-[10%] m-auto rounded-[10px] shadow-2xl'}>
+                    <div className={'w-[50%] h-full absolute left-[3%] '}>
+                        <IMG/>
+
+                    </div>
+
+                    <div className={'w-[40%] h-[80%] absolute right-[5%] top-0 bottom-0 m-auto'}>
+                        <div className={'w-full h-[70%]  absolute top-[5%]'}>
+                            <CustomInput type={'text'} name={'item_name'} placeholder={"Item Name"} className={'outline outline-none w-[90%] h-[20%] border-2 border-gray-400 absolute left-0 right-0 m-auto'}/>
+                            <CustomInput type={'text'} name={'type'} placeholder={"Item Type"} className={'outline outline-none w-[90%] h-[20%] border-2 border-gray-400 mt-3 absolute left-0 right-0 m-auto'}/>
+                            <CustomInput type={'text'} name={'qty'} placeholder={"Item Qty"} className={'outline outline-none w-[90%] h-[20%] border-2 border-gray-400 mt-5 absolute left-0 right-0 m-auto'}/>
+                            <CustomInput type={'text'} name={'price'} placeholder={"Item Price"} className={'outline outline-none w-[90%] h-[20%] border-2 border-gray-400 mt-8 absolute left-0 right-0 m-auto'}/>
+                        </div>
+                        <div className={'w-full h-[25%] absolute bottom-0'}>
+                            <button className={'w-[50%] h-[65%] bg-gray-400 absolute left-0 right-0 top-0 bottom-0 m-auto  text-white text-[20px] rounded-[40px] '}>Save</button>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
 
 
             </div>

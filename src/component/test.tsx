@@ -9,7 +9,7 @@ import {app} from "../firebase/firebase.ts";
 
 function Test(props) {
     const profileRef = useRef();
-    const [profileFile, setProfileFile] = useState([])
+    const [profileFile, setProfileFile] = useState()
     const [profileUrl, setProfileUrl] = useState<string>()
     const [isLoading, setIsLoading] = useState<boolean>(false)
 
@@ -59,7 +59,7 @@ function Test(props) {
             <div className=' rounded-full  cursor-pointer'>
                 <img
                     onClick={() => profileRef.current?.click()}
-                    className=' h-60 w-60 rounded-full '
+                    className=' h-[90%] w-[65%] rounded-full absolute left-0 right-0 top-0 bottom-0 m-auto '
                     src={profileUrl || "https://www.shutterstock.com/image-vector/vector-flat-illustration-grayscale-avatar-600nw-2281862025.jpg"}
                     alt="img"/>
             </div>
