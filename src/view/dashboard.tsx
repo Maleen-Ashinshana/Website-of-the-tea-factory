@@ -1,6 +1,6 @@
 import logOut from "../assets/images/logout.png";
-import fertilizer from "../assets/images/download__13_-removebg-preview.png";
-import teaLeves from "../assets/images/download__14_-removebg-preview.png";
+import fertilizer from "../assets/images/fertilizer.png";
+import teaLeves from "../assets/images/leaves.png";
 import dashBoard from "../assets/images/dashboard-32.png";
 import teaItem from "../assets/images/download__11_-removebg-preview (1).png";
 import orderIcon from "../assets/images/shopping-bag.png";

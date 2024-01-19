@@ -9,16 +9,27 @@ import green_Tea from "../assets/images/collection1.4.jpg";
 import Matcha from "../assets/images/collection1.5.jpg";
 import OlongTea from "../assets/images/collection1.7.jpg";
 import blackPeral from "../assets/images/blackTea/110269-removebg-preview.png";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import TeaProducts from "../component/card/teaProducts.tsx";
 import logo from "../assets/images/Evergreen_Logo_Primary_Full_4Col.png";
+import axios from "axios";
+import Swal from "sweetalert2";
+import Card from "../component/card/teaProducts.tsx";
 
-
+interface Data {
+    id:number,
+    item_name:string,
+    type:string,
+    price:number,
+    img:string,
+}
 function TeaProduct() {
 
     const [isScrolled, setIsScrolled] = useState(false);
+    const [data, setData] = useState<Data[]>([]);
 
     useEffect(() => {
+        getAllItem();
         const handleScroll = () => {
             const scrolled = window.scrollY > 0;
             setIsScrolled(scrolled);
@@ -29,7 +40,24 @@ function TeaProduct() {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
+
+
     }, []);
+
+
+    const getAllItem=()=>{
+        const header={'Content-Type': 'application/json'}
+        axios.get("http://localhost:8080/teaPowder/all",{headers:header}).then(r=>{
+            console.log(r.data.data);
+            setData(r.data.data);
+        }).catch(e=>{
+            Swal.fire({
+                icon: "error",
+                title: "Sorry!",
+                text: "Something went wrong"
+            });
+        })
+    }
 
     const navbarStyle = {
         backgroundColor: isScrolled ? 'rgba(164, 162, 162, 0.25)' : 'transparent',
@@ -206,6 +234,16 @@ function TeaProduct() {
 
             <div className={'w-full h-screen  relative top-12 '} id={'blackTeaDiv'}>
                 <h1 className={'flex items-center justify-center relative top-0 text-[25px]'}>Black Tea</h1>
+
+              {/*  data.map((r:Data,index:number))={
+                <TeaProducts image={blackPeral} title={'Black Peral'} price={100}/>
+                    }*/}
+                <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+                    {data.map((r:Data,index:number) => (
+                        <Card key={r.type}   price={r.price} title={r.item_name}/>
+                    ))}
+                </div>
+
                 <TeaProducts image={blackPeral} title={'Black Peral'} price={100}/>
                 {/*<TeaProducts image={blackPeral} title={"Black Peral"} price={100} />
                     <TeaProducts image={blackPeral} title={"Black Peral"} price={100}/>

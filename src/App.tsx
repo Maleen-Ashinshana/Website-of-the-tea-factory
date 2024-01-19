@@ -19,6 +19,7 @@ import Dashboard from "./view/dashboard.tsx";
 import Bar from "./view/bar.tsx";
 import React from "react";
 import Register from "./view/register.tsx";
+import Te from "./view/te.tsx";
 
 
 
