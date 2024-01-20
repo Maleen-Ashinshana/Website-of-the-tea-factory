@@ -9,13 +9,15 @@ import owner from "../assets/images/download__11_-removebg-preview.png";
 import CustomInput from "../component/input/customInput.tsx";
 import IMG from "../component/test";
 import menuIcon from "../assets/images/menu.png";
-/*import Earl_GreyS from "../assets/images/collection1.2.jpg";
+import Earl_GreyS from "../assets/images/collection1.2.jpg";
 import whiteTea from "../assets/images/White-Tea_1.jpg";
 import green_Tea from "../assets/images/collection1.4.jpg";
 import all from "../assets/images/collection1.1-_1_.jpg";
 import OlongTea from "../assets/images/collection1.7.jpg";
 import Matcha from "../assets/images/collection1.5.jpg";
-import DashBoardCard from "../component/card/dashBoardCard.tsx";*/
+import DashBoardCard from "../component/card/dashBoardCard.tsx";
+import Uploader from "../component/img/imageUploader";
+
 
 import {
     Chart as ChartJs,
@@ -27,15 +29,24 @@ import {
 } from "chart.js";
 import {Bar} from "react-chartjs-2";
 import React, {useEffect, useState} from "react";
-import TeaProducts from "../component/card/teaProducts.tsx";
-import blackPeral from "../assets/images/blackTea/110269-removebg-preview.png";
+import axios from "axios";
+
 
 /*import _default from "chart.js/dist/plugins/plugin.legend";*/
 
 /*import defaultCallbacks from "chart.js/dist/plugins/plugin.tooltip";*/
-
+/*interface PowderItem{
+    id:number,
+    item_name:string,
+    type:string,
+    qty:number,
+    price:number,
+    image:string
+}*/
 
 function Dashboard() {
+
+
     useEffect(() => {
         setItems(false);
     }, []);
@@ -55,13 +66,41 @@ function Dashboard() {
     };
 
 
-
     const handleMenu = () => {
         setButtonText('Save');
         setButtonColor("bg-gray-400");
         // Toggle the state to open/close the menu
         setIsMenuOpen(!isMenuOpen);
     };
+
+    /*----------------------Save Data ------------------------------*/
+    const [item_name, setitem_name] = useState<string>("");
+    const [type, settype] = useState<string>("");
+    const [qty, setqty] = useState<number>();
+    const [price, setprice] = useState<number>();
+    const [image, setimage] = useState<string>("");
+
+
+    const handleSaveData=(e:any,type:any)=>{
+        setitem_name(e.target.value);
+        settype(e.target.value);
+        setqty(e.target.value);
+        setprice(e.target.value);
+        setimage(e.target.value);
+    }
+    const saveItem=()=>{
+        const headers ={
+            'Content-Type': 'application/json',
+        }
+        let body={
+            item_name:item_name,
+            type:type,
+            qty:qty,
+            price:price,
+            image:image
+        }
+        axios.post("http://localhost:8080/teaPowder/save")
+    }
 
     ChartJs.register(
         BarElement,
@@ -245,12 +284,24 @@ function Dashboard() {
             </div>
         </div>
         {showItems && (
-            <div className={'w-[82%] h-[92.5%] bg-[#f0f0f0] absolute right-0 top-[56px] '}>
+            <div className={'w-[82%] h-[92.5%] bg-[#f0f0f0] absolute right-0 top-[56px]'}>
+                <div className={'w-full h-[30%]'}>
+                    <DashBoardCard itemName={'Green Tea'} qty={10} imgSrc={green_Tea}/>
+                    <DashBoardCard itemName={'Black Tea'} qty={10} imgSrc={all}/>
+                    <DashBoardCard itemName={'White Tea'} qty={10} imgSrc={whiteTea}/>
+                    <DashBoardCard itemName={'Oloong Tea'} qty={10} imgSrc={OlongTea}/>
+                    <DashBoardCard itemName={'Early Tea'} qty={10} imgSrc={Earl_GreyS}/>
+                    <DashBoardCard itemName={'Matcha Tea'} qty={10} imgSrc={Matcha}/>
+                </div>
+
                 <div
-                    className={'w-[90%] h-[55%] bg-white absolute left-0 right-0 bottom-[10%] m-auto rounded-[10px] shadow-2xl'}>
+                    className={'w-[90%] h-[55%] bg-white absolute left-0 right-0 bottom-[5%] m-auto rounded-[10px] shadow-2xl'}>
                     <img src={menuIcon} className={'w-6 absolute right-[3%]'} onClick={handleMenu}/>
                     <div className={'w-[50%] h-full absolute left-[3%] '}>
-                        <IMG/>
+                        {/*<IMG/>*/}
+                       {/* <p>https://dog.ceo/api/breeds/list/all
+                        </p>*/}
+                        <Uploader/>
 
                     </div>
 
@@ -270,6 +321,7 @@ function Dashboard() {
                                 className={'w-[50%] h-[65%] bg-gray-400 absolute left-0 right-0 top-0 bottom-0 m-auto  text-white text-[20px] rounded-[40px]'}>
                                 {buttonText}
                             </button>*/}
+
                             <button
                                 className={`w-[50%] h-[65%] absolute left-0 right-0 top-0 bottom-0 m-auto text-white text-[20px] rounded-[40px] ${buttonColor}`}
                             >
@@ -284,7 +336,7 @@ function Dashboard() {
                         <div className="h-[80px] w-24 bg-gray-200 p-4 absolute top-7 right-[-3%] rounded-[10px]">
                             {/* Add your menu items here */}
                             <p className={'cursor-pointer'} onClick={handleUpdateClick}>Update</p>
-                            <p className={'cursor-pointer'}  onClick={handleDeleteClick}>Delete</p>
+                            <p className={'cursor-pointer'} onClick={handleDeleteClick}>Delete</p>
                             {/* ... */}
                         </div>
                     )}
@@ -292,10 +344,8 @@ function Dashboard() {
                 </div>
 
 
-
             </div>
         )}
-
 
 
     </section>

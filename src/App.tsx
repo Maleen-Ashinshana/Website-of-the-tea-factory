@@ -21,6 +21,7 @@ import React from "react";
 import Register from "./view/register.tsx";
 import Te from "./view/te.tsx";
 import AddItem from "./view/addItem.tsx";
+import ImageUploader from "./component/img/imageUploader.tsx";
 
 
 

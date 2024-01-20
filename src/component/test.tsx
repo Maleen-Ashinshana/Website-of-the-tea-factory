@@ -31,7 +31,7 @@ function Test(props) {
             },
             () => {
                 getDownloadURL(uploadTask.snapshot.ref).then((downloadUrl) => {
-                    console.log(downloadUrl);
+                    console.log("URL :"+downloadUrl);
                     setProfileUrl(downloadUrl);
                     setIsLoading(false);
                 });
@@ -68,6 +68,7 @@ function Test(props) {
             }
         </div>
     );
-}
 
+}
+export {getDownloadURL};
 export default Test;
