@@ -109,7 +109,7 @@ function TeaProduct() {
         setIsWhiteTeaDivVisible(false);
     };
     const handleGreenTealDiv = () => {
-        setIsBlackTeaDivVisible(false);
+        setIsBlacwkTeaDivVisible(false);
         setIsEarlDivVisible(false);
         setIsGreenTeaDivVisible(true);
         setIsMatchaTeaDivVisible(false);

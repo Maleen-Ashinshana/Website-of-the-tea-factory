@@ -8,6 +8,7 @@ import customer from "../assets/images/download__5_-removebg-preview.png";
 import owner from "../assets/images/download__11_-removebg-preview.png";
 import CustomInput from "../component/input/customInput.tsx";
 import IMG from "../component/test";
+import menuIcon from "../assets/images/menu.png";
 /*import Earl_GreyS from "../assets/images/collection1.2.jpg";
 import whiteTea from "../assets/images/White-Tea_1.jpg";
 import green_Tea from "../assets/images/collection1.4.jpg";
@@ -38,6 +39,30 @@ function Dashboard() {
     useEffect(() => {
         setItems(false);
     }, []);
+
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [buttonText, setButtonText] = useState('Save');
+    const [buttonColor, setButtonColor] = useState('bg-gray-400');
+
+    const handleUpdateClick = () => {
+        setButtonText('Update');
+        setButtonColor('bg-green-500'); // Change to the desired green color class
+    };
+
+    const handleDeleteClick = () => {
+        setButtonText('Delete');
+        setButtonColor('bg-red-500'); // Change to the desired red color class
+    };
+
+
+
+    const handleMenu = () => {
+        setButtonText('Save');
+        setButtonColor("bg-gray-400");
+        // Toggle the state to open/close the menu
+        setIsMenuOpen(!isMenuOpen);
+    };
+
     ChartJs.register(
         BarElement,
         CategoryScale,
@@ -99,7 +124,7 @@ function Dashboard() {
     const handleItemsDiv = () => {
         setItems(true);
     }
-    const handleDashBoard=()=>{
+    const handleDashBoard = () => {
         setItems(false);
     }
 
@@ -129,7 +154,8 @@ function Dashboard() {
             {/* <div className={'w-full h-[8.5%] bg-[#037616]'}>
                 <p className={'text-white font-mono text-[30px] font-bold flex items-center justify-center'}>Admin</p>
             </div>*/}
-            <div className={'w-full h-[7%] {/*border-2 border-black*/} mt-3 hover:bg-[#20c763] '} onClick={handleDashBoard}>
+            <div className={'w-full h-[7%] {/*border-2 border-black*/} mt-3 hover:bg-[#20c763] '}
+                 onClick={handleDashBoard}>
                 <div className={'w-[25%] h-full {/*border-2 border-blue-500*/} ml-2'}>
                     <img src={dashBoard} className={'w-12 relative left-[10%]'}/>
                 </div>
@@ -148,11 +174,12 @@ function Dashboard() {
                 <p className={'relative bottom-[82%] left-[35%] text-white text-[20px] '}>Tea Fertilizer</p>
             </div>
 
-            <div className={'w-full h-[7%] {/*border-2 border-black*/} mt-3 hover:bg-[#20c763] '} onClick={handleItemsDiv}>
+            <div className={'w-full h-[7%] {/*border-2 border-black*/} mt-3 hover:bg-[#20c763] '}
+                 onClick={handleItemsDiv}>
                 <div className={'w-[25%] h-full {/*border-2 border-blue-500*/} ml-2'}>
                     <img src={teaItem} className={'w-12 relative left-[10%]'}/>
                 </div>
-                <p className={'relative bottom-[82%] left-[35%] text-white text-[20px] '} >Tea
+                <p className={'relative bottom-[82%] left-[35%] text-white text-[20px] '}>Tea
                     Item</p>
             </div>
             <div className={'w-full h-[7%] mt-3 hover:bg-[#20c763] absolute bottom-[8%]'}>
@@ -218,8 +245,10 @@ function Dashboard() {
             </div>
         </div>
         {showItems && (
-            <div className={'w-[82%] h-[92.5%] bg-[#f0f0f0] absolute right-0 top-[56px]'} >
-                <div className={'w-[90%] h-[55%] bg-white absolute left-0 right-0 bottom-[10%] m-auto rounded-[10px] shadow-2xl'}>
+            <div className={'w-[82%] h-[92.5%] bg-[#f0f0f0] absolute right-0 top-[56px] '}>
+                <div
+                    className={'w-[90%] h-[55%] bg-white absolute left-0 right-0 bottom-[10%] m-auto rounded-[10px] shadow-2xl'}>
+                    <img src={menuIcon} className={'w-6 absolute right-[3%]'} onClick={handleMenu}/>
                     <div className={'w-[50%] h-full absolute left-[3%] '}>
                         <IMG/>
 
@@ -227,27 +256,46 @@ function Dashboard() {
 
                     <div className={'w-[40%] h-[80%] absolute right-[5%] top-0 bottom-0 m-auto'}>
                         <div className={'w-full h-[70%]  absolute top-[5%]'}>
-                            <CustomInput type={'text'} name={'item_name'} placeholder={"Item Name"} className={'outline outline-none w-[90%] h-[20%] border-2 border-gray-400 absolute left-0 right-0 m-auto'}/>
-                            <CustomInput type={'text'} name={'type'} placeholder={"Item Type"} className={'outline outline-none w-[90%] h-[20%] border-2 border-gray-400 mt-3 absolute left-0 right-0 m-auto'}/>
-                            <CustomInput type={'text'} name={'qty'} placeholder={"Item Qty"} className={'outline outline-none w-[90%] h-[20%] border-2 border-gray-400 mt-5 absolute left-0 right-0 m-auto'}/>
-                            <CustomInput type={'text'} name={'price'} placeholder={"Item Price"} className={'outline outline-none w-[90%] h-[20%] border-2 border-gray-400 mt-8 absolute left-0 right-0 m-auto'}/>
+                            <CustomInput type={'text'} name={'item_name'} placeholder={"Item Name"}
+                                         className={'outline outline-none w-[90%] h-[20%] border-2 border-gray-400 absolute left-0 right-0 m-auto'}/>
+                            <CustomInput type={'text'} name={'type'} placeholder={"Item Type"}
+                                         className={'outline outline-none w-[90%] h-[20%] border-2 border-gray-400 mt-3 absolute left-0 right-0 m-auto'}/>
+                            <CustomInput type={'text'} name={'qty'} placeholder={"Item Qty"}
+                                         className={'outline outline-none w-[90%] h-[20%] border-2 border-gray-400 mt-5 absolute left-0 right-0 m-auto'}/>
+                            <CustomInput type={'text'} name={'price'} placeholder={"Item Price"}
+                                         className={'outline outline-none w-[90%] h-[20%] border-2 border-gray-400 mt-8 absolute left-0 right-0 m-auto'}/>
                         </div>
                         <div className={'w-full h-[25%] absolute bottom-0'}>
-                            <button className={'w-[50%] h-[65%] bg-gray-400 absolute left-0 right-0 top-0 bottom-0 m-auto  text-white text-[20px] rounded-[40px] '}>Save</button>
+                            {/*<button
+                                className={'w-[50%] h-[65%] bg-gray-400 absolute left-0 right-0 top-0 bottom-0 m-auto  text-white text-[20px] rounded-[40px]'}>
+                                {buttonText}
+                            </button>*/}
+                            <button
+                                className={`w-[50%] h-[65%] absolute left-0 right-0 top-0 bottom-0 m-auto text-white text-[20px] rounded-[40px] ${buttonColor}`}
+                            >
+                                {buttonText}
+                            </button>
 
                         </div>
 
 
                     </div>
-
+                    {isMenuOpen && (
+                        <div className="h-[80px] w-24 bg-gray-200 p-4 absolute top-7 right-[-3%] rounded-[10px]">
+                            {/* Add your menu items here */}
+                            <p className={'cursor-pointer'} onClick={handleUpdateClick}>Update</p>
+                            <p className={'cursor-pointer'}  onClick={handleDeleteClick}>Delete</p>
+                            {/* ... */}
+                        </div>
+                    )}
 
                 </div>
 
 
 
-
             </div>
         )}
+
 
 
     </section>

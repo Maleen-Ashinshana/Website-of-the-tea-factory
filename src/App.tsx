@@ -37,7 +37,7 @@ function App() {
 <div>
     <BrowserRouter>
         <Routes>
-            <Route path={"/"} element={<Te/>}></Route>
+            <Route path={"/"} element={<TeaOrder/>}></Route>
 
             <Route path={"/admin-sing-in"} element={<AdminSingIn/>}></Route>
             <Route path={"/admin-sing-up"} element={<AdminSingUp/>}></Route>
