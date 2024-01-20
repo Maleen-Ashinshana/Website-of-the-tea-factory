@@ -167,7 +167,7 @@ function Dashboard() {
         setItems(false);
     }
 
-    return <section className={'w-full h-full'}>
+    return <section className={'w-full h-full '}>
         <div className={'w-full h-14 bg-white'}>
             <p className={'flex items-center justify-center font-bold text-[30px] relative top-[8px] '}>Admin Dash
                 Board</p>
@@ -189,31 +189,31 @@ function Dashboard() {
                 <li><img src={logOut} className={'w-8 relative left-[100px]'}/></li>
             </ul>
         </nav>*/}
-        <div className={'w-[18%] h-screen bg-[#16B757] fixed'}>
+        <div className={'w-[18%] h-screen bg-[#16B757] fixed '}>
             {/* <div className={'w-full h-[8.5%] bg-[#037616]'}>
                 <p className={'text-white font-mono text-[30px] font-bold flex items-center justify-center'}>Admin</p>
             </div>*/}
-            <div className={'w-full h-[7%] {/*border-2 border-black*/} mt-3 hover:bg-[#20c763] '}
+            <div className={'w-full h-[7%] {/*border-2 border-black*/} mt-3 hover:bg-[#20c763] cursor-pointer'}
                  onClick={handleDashBoard}>
                 <div className={'w-[25%] h-full {/*border-2 border-blue-500*/} ml-2'}>
                     <img src={dashBoard} className={'w-12 relative left-[10%]'}/>
                 </div>
                 <p className={'relative bottom-[82%] left-[35%] text-white text-[20px] '}>Dash Board</p>
             </div>
-            <div className={'w-full h-[7%] {/*border-2 border-black*/} mt-3 hover:bg-[#20c763] '}>
+            <div className={'w-full h-[7%] {/*border-2 border-black*/} mt-3 hover:bg-[#20c763] cursor-pointer'}>
                 <div className={'w-[25%] h-full {/*border-2 border-blue-500*/} ml-2'}>
                     <img src={teaLeves} className={'w-12 relative left-[10%]'}/>
                 </div>
                 <p className={'relative bottom-[82%] left-[35%] text-white text-[20px] '}>Tea Levers</p>
             </div>
-            <div className={'w-full h-[7%] {/*border-2 border-black*/} mt-3 hover:bg-[#20c763] '}>
+            <div className={'w-full h-[7%] {/*border-2 border-black*/} mt-3 hover:bg-[#20c763] cursor-pointer'}>
                 <div className={'w-[25%] h-full {/*border-2 border-blue-500*/} ml-2'}>
                     <img src={fertilizer} className={'w-12 relative left-[10%]'}/>
                 </div>
                 <p className={'relative bottom-[82%] left-[35%] text-white text-[20px] '}>Tea Fertilizer</p>
             </div>
 
-            <div className={'w-full h-[7%] {/*border-2 border-black*/} mt-3 hover:bg-[#20c763] '}
+            <div className={'w-full h-[7%] {/*border-2 border-black*/} mt-3 hover:bg-[#20c763] cursor-pointer '}
                  onClick={handleItemsDiv}>
                 <div className={'w-[25%] h-full {/*border-2 border-blue-500*/} ml-2'}>
                     <img src={teaItem} className={'w-12 relative left-[10%]'}/>
@@ -221,7 +221,7 @@ function Dashboard() {
                 <p className={'relative bottom-[82%] left-[35%] text-white text-[20px] '}>Tea
                     Item</p>
             </div>
-            <div className={'w-full h-[7%] mt-3 hover:bg-[#20c763] absolute bottom-[8%]'}>
+            <div className={'w-full h-[7%] mt-3 hover:bg-[#20c763] absolute bottom-[8%] cursor-pointer'}>
                 <div>
                     <img src={logOut} className={'w-6 relative left-[20px] top-[15px]'}/>
                 </div>
